@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #fc00ff, #00dbde);
+  /* background: linear-gradient(to right, #fe8c00, #f83600); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
