@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   BsArrowRight,
@@ -24,7 +26,7 @@ export default function () {
 
       {/* links and icons */}
       <section className="space-y-16">
-        <nav className="">
+        {/* <nav>
           <ul className="flex md:flex-row flex-col gap-16 ">
             <li>
               <Link className="text-pink-500" href="#hero">
@@ -44,28 +46,31 @@ export default function () {
               <Link href="#contact">Contact</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <div className="flex md:flex-row flex-col justify-between gap-4">
           <div className="flex gap-12">
-            <Link href="/">
+            <Link
+              href="https://www.linkedin.com/in/gigplaced/"
+              target="blank"
+              rel="noopener noreferrer"
+            >
               <BsLinkedin className="w-6 h-6" />
             </Link>
             <Link href="/">
               <BsTwitter className="w-6 h-6" />
             </Link>
-            <Link href="/">
-              <BsTwitter className="w-6 h-6" />
-            </Link>
-            <Link href="/">
-              <BsTwitter className="w-6 h-6" />
-            </Link>
           </div>
 
-          <div className="flex items-center gap-4">
-            <BsEnvelope className="w-5 h-5" />
+          <Link
+            href="mailto:gigplaced@gmail.com"
+            target="blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-pink-500"
+          >
+            <BsEnvelope className="w-6 h-6" />
             <span className="text-lg">gigplaced@gmail.com</span>
-          </div>
+          </Link>
         </div>
       </section>
     </footer>

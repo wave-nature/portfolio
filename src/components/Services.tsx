@@ -38,7 +38,7 @@ export default function () {
         <div className="space-y-5 w-10/12">
           <BsPhone className="h-16 w-16" />
           <h5 className="md:text-3xl text-2xl font-semibold">
-            Cross Plateform Apps
+            Cross Platform Apps
           </h5>
           <p className="md:text-lg text-slate-600">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,

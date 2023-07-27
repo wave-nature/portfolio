@@ -7,13 +7,13 @@ import {} from "react-icons/bs";
 export default function () {
   const [toggle, setToggle] = useState<boolean>(false);
   return (
-    <header className="px-5 py-3  md:px-10  md:py-6 w-full flex bg-white justify-between sticky top-0 border-b border-slate-50 shadow-sm z-10">
+    <header className="px-5 py-3  md:px-10  md:py-6 w-full flex bg-white justify-between items-center sticky top-0 border-b border-slate-50 shadow-sm z-10">
       <Link href="/" className=" text-xl md:text-2xl font-bold">
         GigPlaced
       </Link>
 
       <nav className="md:block hidden">
-        <ul className="flex gap-16 ">
+        <ul className="flex gap-16">
           <li>
             <Link href="#services">Services</Link>
           </li>
