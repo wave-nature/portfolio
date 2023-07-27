@@ -31,7 +31,7 @@ export default function () {
               height={180}
               className="rounded-[100px] mx-auto"
             />
-            <div>
+            <div className="flex flex-col justify-center items-center">
               <h5 className="md:text-3xl text-2xl font-semibold">
                 Vaibhav Kesharwani
               </h5>
@@ -40,13 +40,13 @@ export default function () {
               </p>
             </div>
             <div className="md:w-4/5">
-              <p className="md:text-lg text-slate-600 mb-4">
+              <p className="md:text-lg text-slate-600 mb-4 text-center">
                 With a passion for crafting clean and maintainable code, he
-                seamlessly navigate the realms of Data Science, Web Development,
-                Android Development, and creative design, making them the
-                ultimate freelancer to bring your digital dreams to life.
+                seamlessly navigates the realms of Data Science, Web
+                Development, Android Development, and Creative Design, making
+                him the ultimate Freelancer to bring your idea to life.
               </p>
-              <div className="flex gap-10 justify-center">
+              <div className="flex gap-8 justify-center items-center">
                 <Link href="https://www.linkedin.com/in/vaibhav-kesharwani//">
                   <BsLinkedin className="w-6 h-6 fill-pink-500" />
                 </Link>
@@ -68,7 +68,7 @@ export default function () {
               height={180}
               className="rounded-[100px] mx-auto"
             />
-            <div>
+            <div className="flex flex-col justify-center items-center">
               <h5 className="md:text-3xl text-2xl font-semibold">
                 Vivek Singh Bhadouria
               </h5>
@@ -77,13 +77,13 @@ export default function () {
               </p>
             </div>
             <div className="md:w-4/5">
-              <p className="md:text-lg text-slate-600 mb-4">
-                Experienced developer proficient in React.js and Node.js, write
-                clean code with complex API development, and contributing to web
-                projects including a blogging website and paperless water
-                delivery system.
+              <p className="md:text-lg text-slate-600 mb-4 text-center">
+                Experienced developer proficient in React.js and Node.js,
+                writing clean code with complex API development and contributing
+                to web projects including a blogging website and a paperless
+                water delivery system.
               </p>
-              <div className="flex gap-10 justify-center">
+              <div className="flex gap-8 justify-center items-center">
                 <Link href="https://www.linkedin.com/in/vivek-singh-bhadouria-427649200/">
                   <BsLinkedin className="w-6 h-6 fill-pink-500" />
                 </Link>

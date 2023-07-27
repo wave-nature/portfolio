@@ -10,8 +10,8 @@ interface Props {
 export default function ({ link, imgSrc, title, description }: Props) {
   return (
     <div>
-      <Link href={link} security="rel=noopener noreferrer">
-        <div className="space-y-5">
+      <Link href={link} rel="noopener noreferrer" target="blank">
+        <div className="space-y-4">
           <div className="overflow-hidden">
             <img
               src={imgSrc}

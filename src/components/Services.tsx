@@ -1,5 +1,15 @@
-import { BsLaptop, BsPhone, BsCodeSlash } from "react-icons/bs";
+import {
+  BsLaptop,
+  BsPhone,
+  BsCodeSlash,
+  BsGraphUp,
+  BsAndroid,
+  BsDatabase,
+} from "react-icons/bs";
+import { LuBrainCircuit } from "react-icons/lu";
+import { MdOutlineAutoAwesomeMotion } from "react-icons/md";
 import Inview from "./Inview";
+import Service from "./Service";
 
 export default function () {
   return (
@@ -19,37 +29,66 @@ export default function () {
         </div>
 
         {/* Services */}
-        <div className="grid gap-28 md:grid-cols-3 grid-cols-1">
-          <div className="space-y-5 w-10/12">
-            <BsCodeSlash className="h-16 w-16" />
-            <h5 className="md:text-3xl text-2xl font-semibold">
-              Web Design & Development
-            </h5>
-            <p className="md:text-lg text-slate-600">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
-              vitae.
-            </p>
-          </div>
-          <div className="space-y-5 w-10/12">
-            <BsLaptop className="h-16 w-16" />
-            <h5 className="md:text-3xl text-2xl font-semibold">
-              Saas Product Development
-            </h5>
-            <p className="md:text-lg text-slate-600">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
-              vitae.
-            </p>
-          </div>
-          <div className="space-y-5 w-10/12">
-            <BsPhone className="h-16 w-16" />
-            <h5 className="md:text-3xl text-2xl font-semibold">
-              Cross Platform Apps
-            </h5>
-            <p className="md:text-lg text-slate-600">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
-              vitae.
-            </p>
-          </div>
+        <div className="grid gap-16 md:grid-cols-4 grid-cols-1">
+          <Service
+            heading="Web Design & Development"
+            icon={<BsCodeSlash className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Saas Product Development"
+            icon={<BsLaptop className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Cross-Platform Apps"
+            icon={<BsPhone className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Data Scraping"
+            icon={<BsCodeSlash className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Business Analytics"
+            icon={<BsGraphUp className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Search Engine Optimization"
+            icon={<BsLaptop className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Data Visualization"
+            icon={<BsGraphUp className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Android Development"
+            icon={<BsAndroid className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Database Design & Development"
+            icon={<BsDatabase className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="AI Agents"
+            icon={<LuBrainCircuit className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="LLM Apps Trained With Custom Data"
+            icon={<LuBrainCircuit className="h-16 w-16" />}
+          />
+
+          <Service
+            heading="Motion Design"
+            icon={<MdOutlineAutoAwesomeMotion className="h-16 w-16" />}
+          />
         </div>
       </section>
     </Inview>
