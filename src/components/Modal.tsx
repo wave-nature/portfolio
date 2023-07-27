@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import Box from "@mui/material/Box";
