@@ -1,6 +1,8 @@
 "use client";
 
-const Service = ({ heading, icon }) => {
+import { ReactNode } from "react";
+
+const Service = ({ heading, icon }: { heading: string; icon: any }) => {
   return (
     <div className="space-y-5 w-10/12">
       {icon}
