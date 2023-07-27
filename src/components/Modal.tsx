@@ -46,7 +46,7 @@ export default function ContactModal() {
         onClick={handleOpen}
         className="group flex items-center text-pink-500 md:text-3xl text-xl cursor-pointer font-bold border-2 border-pink-500 max-w-max px-6 py-4"
       >
-        <p>let's make something special</p>
+        <p>Let's make something special</p>
         <span className="ml-4 group-hover:translate-x-4 transition duration-300 mt-1">
           <BsArrowRight />
         </span>
@@ -56,7 +56,6 @@ export default function ContactModal() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        className="border-0 outline-none shadow-sm"
       >
         <Box sx={style}>
           {formSubmit ? (

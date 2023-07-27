@@ -24,7 +24,7 @@ export default function () {
               <Link href="#about">About Us</Link>
             </li>
             <li>
-              <Link href="#contact">Contact</Link>
+              <Link href="#footer">Contact</Link>
             </li>
           </ul>
         </nav>

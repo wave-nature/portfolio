@@ -21,16 +21,23 @@ export default function () {
         {/* clients */}
         <div className="grid md:grid-cols-2 grid-cols-1 gap-12">
           <ClientCard
-            title="SaaS Development"
-            description="Third time working with this Vaibhav and team, and he always manage goes beyond expectations"
+            title="Database Design | AI Agents"
+            description="Third time working with this Vaibhav and team, and they always manage to go beyond expectations"
             user="miki_t"
-            job="self employed, (USA)"
+            job="Self-Employed, (USA)"
           />
           <ClientCard
-            title="Web Development"
+            title="Web Design & Development"
             description="very good, friendly and the delivery was vera fast :D"
             user="ivanbutronsossa"
-            job="self employed, (Germany)"
+            job="Self-Employed, (Germany)"
+          />
+
+          <ClientCard
+            title="Web Design & Development"
+            description="Work successfully done by them."
+            user="Praveen Rana"
+            job="Self-Employed, (India)"
           />
         </div>
       </section>

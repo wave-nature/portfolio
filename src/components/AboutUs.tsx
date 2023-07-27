@@ -47,13 +47,25 @@ export default function () {
                 him the ultimate Freelancer to bring your idea to life.
               </p>
               <div className="flex gap-8 justify-center items-center">
-                <Link href="https://www.linkedin.com/in/vaibhav-kesharwani//">
+                <Link
+                  href="https://www.linkedin.com/in/vaibhav-kesharwani//"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
                   <BsLinkedin className="w-6 h-6 fill-pink-500" />
                 </Link>
-                <Link href="https://www.instagram.com/vk_2128/">
+                <Link
+                  href="https://www.instagram.com/vaibbhavk"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
                   <BsInstagram className="w-6 h-6 fill-pink-500" />
                 </Link>
-                <Link href="https://github.com/vaibbhavk">
+                <Link
+                  href="https://github.com/vaibbhavk"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
                   <BsGithub className="w-6 h-6 fill-pink-500" />
                 </Link>
               </div>
@@ -84,13 +96,25 @@ export default function () {
                 water delivery system.
               </p>
               <div className="flex gap-8 justify-center items-center">
-                <Link href="https://www.linkedin.com/in/vivek-singh-bhadouria-427649200/">
+                <Link
+                  href="https://www.linkedin.com/in/vivek-singh-bhadouria-427649200/"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
                   <BsLinkedin className="w-6 h-6 fill-pink-500" />
                 </Link>
-                <Link href="https://www.instagram.com/viveksinghbhadouria/">
+                <Link
+                  href="https://www.instagram.com/viveksinghbhadouria/"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
                   <BsInstagram className="w-6 h-6 fill-pink-500" />
                 </Link>
-                <Link href="https://github.com/wave-nature">
+                <Link
+                  href="https://github.com/wave-nature"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
                   <BsGithub className="w-6 h-6 fill-pink-500" />
                 </Link>
               </div>

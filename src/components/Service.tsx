@@ -1,3 +1,5 @@
+"use client";
+
 const Service = ({ heading, icon }) => {
   return (
     <div className="space-y-5 w-10/12">

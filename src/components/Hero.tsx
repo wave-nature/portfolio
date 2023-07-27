@@ -21,8 +21,8 @@ export default function () {
         </div>
 
         <h3 className="text-xl md:text-3xl font-light text-slate-600 md:w-2/3 mb-4 md:mb-12">
-          Web Design, Android and Web Application Development, SaaS Development,
-          Database Design and Development, Data Scraping, AI Agents & Much More.
+          Web Design, Android & Web Development, SaaS Development, Database
+          Design & Development, Data Scraping, AI Agents, & Much More.
         </h3>
 
         <div className="flex flex-col md:flex-row justify-start items-center gap-8">
