@@ -1,7 +1,31 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { BsStarFill } from "react-icons/bs";
 
-export default function () {
+const colors = [
+  "bg-red-500",
+  "bg-green-500",
+  "bg-blue-500",
+  "bg-orange-500",
+  "bg-indigo-500",
+  "bg-purple-500",
+];
+function randomIntFromInterval(min: number, max: number) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+export default function ({
+  title,
+  description,
+  user,
+  job,
+}: {
+  title: string;
+  description: string;
+  user: string;
+  job: string;
+}) {
+  const rndInt = randomIntFromInterval(1, 6);
   return (
     <div className="border p-8 space-y-10">
       <div className="flex gap-2">
@@ -12,31 +36,25 @@ export default function () {
         <BsStarFill className="fill-yellow-400 w-4 h-4" />
       </div>
       <div className="space-y-6">
-        <h5 className="md:text-3xl text-2xl font-semibold">
-          Saas Product Development
-        </h5>
-        <p className="md:text-lg text-slate-600">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque,
-          vitae. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-          Exercitationem, consequuntur ab architecto labore sequi enim omnis
-          iste at quo itaque.
-        </p>
+        <h5 className="md:text-3xl text-2xl font-semibold">{title}</h5>
+        <p className="md:text-lg text-slate-600">{description}</p>
 
         <div className="flex items-center gap-8">
-          <Image
+          {/* <Image
             src="/images/user.webp"
             alt="user"
             className="w-20 h-20 rounded-full"
             width={100}
             height={100}
-          />
+          /> */}
+          <div
+            className={`rounded-full w-20 h-20 flex items-center justify-center text-2xl font-bold ${colors[rndInt]}`}
+          >
+            {user[0].toUpperCase()}
+          </div>
           <div>
-            <h5 className="md:text-xl text-lg font-semibold">
-              Saas Product Development
-            </h5>
-            <p className="md:text-sm text-slate-600">
-              Marketing Manager, Company
-            </p>
+            <h5 className="md:text-xl text-lg font-semibold">{user}</h5>
+            <p className="md:text-sm text-slate-600">{job}</p>
           </div>
         </div>
       </div>

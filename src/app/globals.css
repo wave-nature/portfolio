@@ -6,6 +6,29 @@ html {
   scroll-behavior: smooth;
 }
 
+.fade-out {
+  transform: translateY(100px);
+}
+
+.fade-in {
+  transform: translateY(0);
+  transition: all 2s ease;
+  animation: fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 2s;
+  -ms-animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .text-gradient {
   background: linear-gradient(to right, #fc00ff, #00dbde);
   /* background: linear-gradient(to right, #fe8c00, #f83600); */
