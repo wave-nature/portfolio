@@ -5,6 +5,10 @@ import {
   BsGraphUp,
   BsAndroid,
   BsDatabase,
+  BsRobot,
+  BsClipboardData,
+  BsSearch,
+  BsGlobe,
 } from "react-icons/bs";
 import { LuBrainCircuit } from "react-icons/lu";
 import { MdOutlineAutoAwesomeMotion } from "react-icons/md";
@@ -32,62 +36,64 @@ export default function () {
         <div className="grid gap-16 md:grid-cols-4 grid-cols-1">
           <Service
             heading="Web Design & Development"
-            icon={<BsCodeSlash className="h-16 w-16" />}
+            icon={<BsCodeSlash className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="Saas Product Development"
-            icon={<BsLaptop className="h-16 w-16" />}
+            icon={<BsLaptop className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="Cross-Platform Apps"
-            icon={<BsPhone className="h-16 w-16" />}
+            icon={<BsPhone className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="Data Scraping"
-            icon={<BsCodeSlash className="h-16 w-16" />}
+            icon={<BsGlobe className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="Business Analytics"
-            icon={<BsGraphUp className="h-16 w-16" />}
+            icon={<BsGraphUp className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
-            heading="Search Engine Optimization"
-            icon={<BsLaptop className="h-16 w-16" />}
+            heading="Search Engine Optimization (SEO)"
+            icon={<BsSearch className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="Data Visualization"
-            icon={<BsGraphUp className="h-16 w-16" />}
+            icon={<BsClipboardData className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="Android Development"
-            icon={<BsAndroid className="h-16 w-16" />}
+            icon={<BsAndroid className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="Database Design & Development"
-            icon={<BsDatabase className="h-16 w-16" />}
+            icon={<BsDatabase className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="AI Agents"
-            icon={<LuBrainCircuit className="h-16 w-16" />}
+            icon={<LuBrainCircuit className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="LLM Apps Trained With Custom Data"
-            icon={<LuBrainCircuit className="h-16 w-16" />}
+            icon={<BsRobot className="fill-slate-700 h-12 w-12" />}
           />
 
           <Service
             heading="Motion Design"
-            icon={<MdOutlineAutoAwesomeMotion className="h-16 w-16" />}
+            icon={
+              <MdOutlineAutoAwesomeMotion className="fill-slate-700 h-12 w-12" />
+            }
           />
         </div>
       </section>

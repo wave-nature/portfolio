@@ -11,7 +11,7 @@ export default function () {
     <Inview id="hero">
       <section
         id="hero"
-        className="fade-out h-[50vh] md:h-[85vh] flex flex-col justify-center gap-5"
+        className="fade-out h-[70vh] md:h-[85vh] flex flex-col justify-center gap-5"
       >
         <div className="mb-1 md:mb-4">
           <h1 className="text-5xl sm:text-6xl md:text-7xl md:w-4/5 font-bold text-slate-800">
@@ -22,7 +22,10 @@ export default function () {
 
         <h3 className="text-xl md:text-3xl font-light text-slate-600 md:w-2/3 mb-4 md:mb-12">
           Web Design, Android & Web Development, SaaS Development, Database
-          Design & Development, Data Scraping, AI Agents, & Much More.
+          Design & Development, Data Scraping, AI Agents, &{" "}
+          <span className="bg-green-400 px-1 text-white inline-block -skew-x-12">
+            Much More.
+          </span>
         </h3>
 
         <div className="flex flex-col md:flex-row justify-start items-center gap-8">
@@ -31,16 +34,6 @@ export default function () {
             onClick={() => router.push("#about")}
           >
             <span>About Us</span>
-            <span className="ml-4 absolute group-hover:translate-x-4 transition duration-300 mt-1">
-              <BsArrowRight className="w-10" />
-            </span>
-          </button>
-
-          <button
-            className="border-2 group border-slate-600 hover:border-dashed w-48 md:w-[17rem] py-3 md:py-4 text-md md:text-xl"
-            onClick={() => router.push("#services")}
-          >
-            <span>Our Services</span>
             <span className="ml-4 absolute group-hover:translate-x-4 transition duration-300 mt-1">
               <BsArrowRight className="w-10" />
             </span>
