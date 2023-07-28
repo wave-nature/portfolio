@@ -47,14 +47,14 @@ async function saveSiteVisitImpression() {
           ipAddress,
           visitCount: visit.visitCount + 1,
         });
+      } else {
+        // new visitor
+        await axios.post(`${BASE_URL}/site-visit.json`, {
+          date: new Date().toISOString(),
+          ipAddress,
+          visitCount: 1,
+        });
       }
-    } else {
-      // new visitor
-      await axios.post(`${BASE_URL}/site-visit.json`, {
-        date: new Date().toISOString(),
-        ipAddress,
-        visitCount: 1,
-      });
     }
   } catch (error: any) {
     console.log("Error in saving site visit impression", error.message);
