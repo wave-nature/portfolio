@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import { CircularProgress } from "@mui/material";
+import { saveEmail } from "@/request";
 
 const style = {
   position: "absolute" as "absolute",
@@ -21,6 +23,7 @@ export default function ContactModal() {
   const [formSubmit, setFormSubmit] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [open, setOpen] = useState(false);
+  const [loader, setLoader] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -34,10 +37,13 @@ export default function ContactModal() {
     }
   }, [formSubmit]);
 
-  function contactHandler(e: any) {
+  async function contactHandler(e: any) {
     e.preventDefault();
     if (!email) return;
+    setLoader(true);
+    await saveEmail(email);
     setFormSubmit(true);
+    setLoader(false);
   }
 
   return (
@@ -82,7 +88,8 @@ export default function ContactModal() {
                 value={email}
               />
               <button className="bg-purple-700 text-white px-4 py-2 rounded">
-                Let's Talk
+                Let's Talk{" "}
+                {loader && <CircularProgress size={20} color="inherit" />}
               </button>
             </form>
           )}

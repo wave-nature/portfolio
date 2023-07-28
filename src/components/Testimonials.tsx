@@ -1,5 +1,6 @@
 import ClientCard from "./ClientCard";
 import Inview from "./Inview";
+import ReviewModal from "./ReviewModal";
 
 export default function () {
   return (
@@ -39,6 +40,11 @@ export default function () {
             user="Praveen Rana"
             job="Self-Employed, (India)"
           />
+        </div>
+
+        {/* CTA */}
+        <div className="mt-8">
+          <ReviewModal />
         </div>
       </section>
     </Inview>
