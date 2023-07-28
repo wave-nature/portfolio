@@ -1,11 +1,17 @@
 "use client";
 
+import { useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 import Inview from "./Inview";
+import { saveSiteVisitImpression } from "@/request";
 
 export default function () {
   const router = useRouter();
+
+  useEffect(() => {
+    saveSiteVisitImpression();
+  }, []);
 
   return (
     <Inview id="hero">
