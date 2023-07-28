@@ -13,6 +13,17 @@ async function getClientIpAddress() {
   }
 }
 
+async function getLocationFromIp(ip: string) {
+  try {
+    const response = await axios.get(`http://ip-api.com/json/${ip}`);
+    const location = response.data;
+    return location;
+  } catch (error: any) {
+    console.error("Error fetching location:", error.message);
+    return null;
+  }
+}
+
 async function getSiteVisits() {
   try {
     const vistRes = await axios.get(`${BASE_URL}/site-visit.json`);
@@ -28,6 +39,9 @@ async function saveSiteVisitImpression() {
   try {
     const ipAddress = await getClientIpAddress();
     if (!ipAddress) return console.log("No IP address found");
+
+    const location = await getLocationFromIp(ipAddress);
+    if (!location) return console.log("No location found");
 
     // check if user already visit website
     const visitsRes = await getSiteVisits();
@@ -52,6 +66,7 @@ async function saveSiteVisitImpression() {
         await axios.post(`${BASE_URL}/site-visit.json`, {
           date: new Date().toISOString(),
           ipAddress,
+          location,
           visitCount: 1,
         });
       }
