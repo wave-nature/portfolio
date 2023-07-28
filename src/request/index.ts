@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = "https://gigplaced-portfolio-default-rtdb.firebaseio.com";
+// const BASE_URL = "https://gigplaced-portfolio-default-rtdb.firebaseio.com";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 async function getClientIpAddress() {
   try {
@@ -15,7 +16,9 @@ async function getClientIpAddress() {
 
 async function getLocationFromIp(ip: string) {
   try {
-    const response = await axios.get(`http://ip-api.com/json/${ip}`);
+    const response = await axios.get(
+      `https://ipinfo.io/${ip}?token=${process.env.NEXT_PUBLIC_IP_API_TOKEN}`
+    );
     const location = response.data;
     return location;
   } catch (error: any) {
@@ -47,29 +50,26 @@ async function saveSiteVisitImpression() {
     const visitsRes = await getSiteVisits();
     const visits = visitsRes ? Object.keys(visitsRes) : null;
 
-    // revisit
-    if (visits !== null) {
-      const visitId: any = visits.find(
-        (id: any) => visitsRes[id]?.ipAddress === ipAddress
-      ); // returns visit id
-      if (visitId) {
-        const visit = visitsRes[visitId];
-        // old visitor
-        await axios.put(`${BASE_URL}/site-visit/${visitId}.json`, {
-          ...visit,
-          date: new Date().toISOString(),
-          ipAddress,
-          visitCount: visit.visitCount + 1,
-        });
-      } else {
-        // new visitor
-        await axios.post(`${BASE_URL}/site-visit.json`, {
-          date: new Date().toISOString(),
-          ipAddress,
-          location,
-          visitCount: 1,
-        });
-      }
+    const visitId: any = visits?.find(
+      (id: any) => visitsRes[id]?.ipAddress === ipAddress
+    ); // returns visit id
+    if (visitId) {
+      const visit = visitsRes[visitId];
+      // old visitor
+      await axios.put(`${BASE_URL}/site-visit/${visitId}.json`, {
+        ...visit,
+        date: new Date().toISOString(),
+        ipAddress,
+        visitCount: visit.visitCount + 1,
+      });
+    } else {
+      // new visitor
+      await axios.post(`${BASE_URL}/site-visit.json`, {
+        date: new Date().toISOString(),
+        ipAddress,
+        location,
+        visitCount: 1,
+      });
     }
   } catch (error: any) {
     console.log("Error in saving site visit impression", error.message);
