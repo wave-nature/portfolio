@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// const BASE_URL = "https://gigplaced-portfolio-default-rtdb.firebaseio.com";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 async function getClientIpAddress() {
