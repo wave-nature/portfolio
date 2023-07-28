@@ -14,10 +14,7 @@ export default function () {
             Work
           </h5>
           <h2 className="font-semibold md:text-5xl sm:text-4xl text-3xl md:w-2/3">
-            Real Result for every client.
-          </h2>
-          <h2 className="font-semibold md:text-5xl sm:text-4xl text-3xl md:w-2/3">
-            Every time.
+            Real results for more than 20+ clients now and then.
           </h2>
         </div>
 
