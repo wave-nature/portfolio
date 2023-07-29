@@ -52,7 +52,7 @@ export default function ContactModal() {
         onClick={handleOpen}
         className="group flex items-center text-pink-500 md:text-3xl text-xl cursor-pointer font-bold border-2 border-pink-500 max-w-max px-6 py-4"
       >
-        <p>Let's make something special</p>
+        <p>We start from $20/hr, let's connect</p>
         <span className="ml-4 group-hover:translate-x-4 transition duration-300 mt-1">
           <BsArrowRight />
         </span>
