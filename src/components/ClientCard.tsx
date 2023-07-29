@@ -1,5 +1,8 @@
 // import Image from "next/image";
-import { BsStarFill } from "react-icons/bs";
+import Image from "next/image";
+import Link from "next/link";
+import { ReactElement } from "react";
+import { BsStarFill, BsCheckCircleFill } from "react-icons/bs";
 
 const colors = [
   "bg-red-500",
@@ -19,11 +22,15 @@ export default function ({
   description,
   user,
   job,
+  icon,
+  iconLink,
 }: {
   title: string;
   description: string;
   user: string;
   job: string;
+  icon: any;
+  iconLink: string;
 }) {
   const rndInt = randomIntFromInterval(1, 6);
   return (
@@ -39,7 +46,7 @@ export default function ({
         <h5 className="md:text-3xl text-2xl font-semibold">{title}</h5>
         <p className="md:text-lg text-slate-600">{description}</p>
 
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-8 justify-between">
           {/* <Image
             src="/images/user.webp"
             alt="user"
@@ -47,14 +54,23 @@ export default function ({
             width={100}
             height={100}
           /> */}
-          <div
-            className={`rounded-full w-20 h-20 flex items-center justify-center text-2xl font-bold ${colors[rndInt]}`}
-          >
-            {user[0].toUpperCase()}
+          <div className="flex items-center gap-8">
+            <div
+              className={`rounded-full w-20 h-20 flex items-center justify-center text-2xl font-bold ${colors[rndInt]}`}
+            >
+              {user[0].toUpperCase()}
+            </div>
+            <div>
+              <h5 className="md:text-xl text-lg font-semibold">{user}</h5>
+              <p className="md:text-sm text-slate-600">{job}</p>
+            </div>
           </div>
-          <div>
-            <h5 className="md:text-xl text-lg font-semibold">{user}</h5>
-            <p className="md:text-sm text-slate-600">{job}</p>
+          <div className="flex items-center gap-1 justify-end">
+            <BsCheckCircleFill className="w-4 h-4 fill-green-400" />
+            <p className="md:text-sm text-slate-600">Verified from</p>
+            <Link href={iconLink} target="blank" rel="noopener noreferrer">
+              {icon}
+            </Link>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ClientCard from "./ClientCard";
 import Inview from "./Inview";
 import ReviewModal from "./ReviewModal";
@@ -26,12 +27,30 @@ export default function () {
             description="Third time working with this Vaibhav and team, and they always manage to go beyond expectations"
             user="miki_t"
             job="Self-Employed, (USA)"
+            icon={
+              <Image
+                src="/images/fiverr.svg"
+                alt="fiverr icon"
+                height={50}
+                width={50}
+              />
+            }
+            iconLink="https://www.fiverr.com/vaibbhavvk?public_mode=true"
           />
           <ClientCard
             title="Web Design & Development"
             description="very good, friendly and the delivery was vera fast :D"
             user="ivanbutronsossa"
             job="Self-Employed, (Germany)"
+            icon={
+              <Image
+                src="/images/fiverr.svg"
+                alt="fiverr icon"
+                height={50}
+                width={50}
+              />
+            }
+            iconLink="https://www.fiverr.com/vaibbhavvk?public_mode=true"
           />
 
           <ClientCard
@@ -39,6 +58,15 @@ export default function () {
             description="Work successfully done by them."
             user="Praveen Rana"
             job="Self-Employed, (India)"
+            icon={
+              <Image
+                src="/images/upwork.svg"
+                alt="upwork icon"
+                height={35}
+                width={35}
+              />
+            }
+            iconLink="https://www.upwork.com/freelancers/~01e98ab6fa7c516372?viewMode=1"
           />
         </div>
 
