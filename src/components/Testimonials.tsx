@@ -62,8 +62,8 @@ export default function () {
               <Image
                 src="/images/upwork.svg"
                 alt="upwork icon"
-                height={35}
-                width={35}
+                height={30}
+                width={30}
               />
             }
             iconLink="https://www.upwork.com/freelancers/~01e98ab6fa7c516372?viewMode=1"

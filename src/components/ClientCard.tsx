@@ -46,7 +46,7 @@ export default function ({
         <h5 className="md:text-3xl text-2xl font-semibold">{title}</h5>
         <p className="md:text-lg text-slate-600">{description}</p>
 
-        <div className="flex items-center gap-8 justify-between">
+        <div className="flex items-start xl:items-center gap-8 justify-between flex-col xl:flex-row">
           {/* <Image
             src="/images/user.webp"
             alt="user"
