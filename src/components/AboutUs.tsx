@@ -41,10 +41,11 @@ export default function () {
             </div>
             <div className="md:w-4/5">
               <p className="md:text-lg text-slate-600 mb-4 text-center">
-                With a passion for crafting clean and maintainable code, he
-                seamlessly navigates the realms of Data Science, Web
-                Development, Android Development, and Creative Design, making
-                him the ultimate Freelancer to bring your idea to life.
+                With an experience of 3+ years and a passion for crafting clean
+                and maintainable code, he seamlessly navigates the realms of
+                Data Science, Web Development, Android Development, and Creative
+                Design, making him the ultimate Freelancer to bring your idea to
+                life.
               </p>
               <div className="flex gap-8 justify-center items-center">
                 <Link
@@ -90,10 +91,10 @@ export default function () {
             </div>
             <div className="md:w-4/5">
               <p className="md:text-lg text-slate-600 mb-4 text-center">
-                Experienced developer proficient in React.js and Node.js,
-                writing clean code with complex API development and contributing
-                to web projects including a blogging website and a paperless
-                water delivery system.
+                Developer with 2+ years of experience proficient in React.js and
+                Node.js, writing clean code with complex API development and
+                contributing to web projects including a blogging website and a
+                paperless water delivery system.
               </p>
               <div className="flex gap-8 justify-center items-center">
                 <Link
