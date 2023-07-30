@@ -25,7 +25,7 @@ export default function () {
           {/* vaibhav */}
           <div className="flex flex-col items-center gap-4 p-4">
             <Image
-              src="/images/logo.svg"
+              src="/images/vaibhav.jpg"
               alt="vaibhav"
               width={180}
               height={180}
