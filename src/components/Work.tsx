@@ -24,7 +24,7 @@ export default function () {
           <div className="space-y-12">
             <Project
               link="https://bookmytable.vercel.app/"
-              imgSrc="/images/home.png"
+              imgSrc="/images/logo.svg"
               title="Book Table"
               description="Table booking website application for restaurant and hotels. Functionalities like availaibilty and scheduling slot for booking."
             />
