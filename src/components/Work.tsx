@@ -30,7 +30,7 @@ export default function () {
             />
             <Project
               link="#"
-              imgSrc="https://framerusercontent.com/images/GfXw1hONniSNADZ4LS14qrow.jpg"
+              imgSrc="/images/1.webp"
               title="Uploading Soon"
               description="This is a dummy description for the project."
             />
@@ -40,14 +40,14 @@ export default function () {
           <div className="space-y-12 mt-16">
             <Project
               link="#"
-              imgSrc="https://framerusercontent.com/images/LfcR9yeg7quuW1zBU5D6zhJmPc.jpg?scale-down-to=4096"
+              imgSrc="/images/2.webp"
               title="Uploading Soon"
               description="This is a dummy description for the project."
             />
 
             <Project
               link="#"
-              imgSrc="https://framerusercontent.com/images/3xLQPn6AYxYOeDj4LLHrM98d1Wk.jpg?scale-down-to=4096"
+              imgSrc="/images/3.webp"
               title="Uploading Soon"
               description="This is a dummy description for the project."
             />
