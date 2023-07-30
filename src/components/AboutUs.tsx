@@ -23,9 +23,9 @@ export default function () {
         {/* our team */}
         <div className="grid md:grid-cols-2 grid-cols-1 gap-16">
           {/* vaibhav */}
-          {/* <div className="flex flex-col items-center gap-4 p-4">
+          <div className="flex flex-col items-center gap-4 p-4">
             <Image
-              src="/images/vaibhav.jpg"
+              src="/images/logo.svg"
               alt="vaibhav"
               width={180}
               height={180}
@@ -70,7 +70,7 @@ export default function () {
                 </Link>
               </div>
             </div>
-          </div> */}
+          </div>
           {/* vivek */}
           <div className="flex flex-col items-center gap-4 p-4">
             <Image
