@@ -21,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta name="image" property="og:image" content="/images/logo.png"></meta>
       <body className={`${inter.className} relative`}>
         <Header />
         {children}

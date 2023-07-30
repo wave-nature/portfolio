@@ -57,6 +57,10 @@ export default function ContactModal() {
           <BsArrowRight />
         </span>
       </button>
+      <p className="md:text-lg text-sm mt-8 text-slate-500 font-bold">
+        We understand and believe in pay us only when you satisfied by our work
+        policy ✌
+      </p>
       <Modal
         open={open}
         onClose={handleClose}
@@ -88,7 +92,7 @@ export default function ContactModal() {
                 value={email}
               />
               <button className="bg-purple-700 text-white px-4 py-2 rounded">
-                Let's Talk{" "}
+                Let's Build{" "}
                 {loader && <CircularProgress size={20} color="inherit" />}
               </button>
             </form>
