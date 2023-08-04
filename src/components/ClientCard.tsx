@@ -24,6 +24,9 @@ export default function ({
   job,
   icon,
   iconLink,
+  companyIcon,
+  companyLink,
+  companyName,
 }: {
   title: string;
   description: string;
@@ -31,6 +34,9 @@ export default function ({
   job: string;
   icon: any;
   iconLink: string;
+  companyIcon: any;
+  companyLink: string | null;
+  companyName: string | null;
 }) {
   const rndInt = randomIntFromInterval(1, 6);
   return (
@@ -63,6 +69,25 @@ export default function ({
             <div>
               <h5 className="md:text-xl text-lg font-semibold">{user}</h5>
               <p className="md:text-sm text-slate-600">{job}</p>
+              {companyIcon ? (
+                <Link
+                  href={iconLink}
+                  target="blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-2"
+                >
+                  {companyIcon}
+                  {companyName && (
+                    <p className="font-semibold">{companyName}</p>
+                  )}
+                </Link>
+              ) : (
+                <>
+                  {companyName && (
+                    <p className="font-semibold">{companyName}</p>
+                  )}
+                </>
+              )}
             </div>
           </div>
           <div className="flex items-center gap-1 justify-end">

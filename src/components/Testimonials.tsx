@@ -36,6 +36,9 @@ export default function () {
               />
             }
             iconLink="https://www.fiverr.com/vaibbhavvk?public_mode=true"
+            companyIcon={null}
+            companyLink={null}
+            companyName={null}
           />
           <ClientCard
             title="Web Design & Development"
@@ -51,6 +54,9 @@ export default function () {
               />
             }
             iconLink="https://www.fiverr.com/vaibbhavvk?public_mode=true"
+            companyIcon={null}
+            companyLink={null}
+            companyName={null}
           />
 
           <ClientCard
@@ -67,6 +73,28 @@ export default function () {
               />
             }
             iconLink="https://www.upwork.com/freelancers/~01e98ab6fa7c516372?viewMode=1"
+            companyIcon={null}
+            companyLink={null}
+            companyName="Algo Crab"
+          />
+
+          <ClientCard
+            title="Web Application Development"
+            description="Good work by the the team. Thanks"
+            user="Sumit Arora"
+            job="Self-Employed, (India)"
+            icon={
+              <Image
+                src="/images/fiverr.svg"
+                alt="fiverr icon"
+                height={50}
+                width={50}
+              />
+            }
+            iconLink="https://www.fiverr.com/vaibbhavvk?public_mode=true"
+            companyIcon={null}
+            companyLink={null}
+            companyName="k2sconsulting"
           />
         </div>
 
