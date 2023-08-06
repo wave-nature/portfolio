@@ -96,6 +96,25 @@ export default function () {
             companyLink={null}
             companyName="k2sconsulting"
           />
+
+          <ClientCard
+            title="Web App Dev | Database Design & Dev"
+            description="Vaibhav and team are extremely skilled & delivered the project on time. Very much satisfied with their work."
+            user="bhargavakaranth"
+            job="Self-Employed, (India)"
+            icon={
+              <Image
+                src="/images/fiverr.svg"
+                alt="fiverr icon"
+                height={50}
+                width={50}
+              />
+            }
+            iconLink="https://www.fiverr.com/vaibbhavvk?public_mode=true"
+            companyIcon={null}
+            companyLink={null}
+            companyName={null}
+          />
         </div>
 
         {/* CTA */}

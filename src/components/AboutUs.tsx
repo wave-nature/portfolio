@@ -36,7 +36,7 @@ export default function () {
                 Vaibhav Kesharwani
               </h5>
               <p className="md:text-lg text-base text-slate-700 font-medium">
-                Software Engineer {"</>"}
+                Software Engineer | Data Scientist 
               </p>
             </div>
             <div className="md:w-4/5">
