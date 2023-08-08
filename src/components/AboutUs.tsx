@@ -36,7 +36,7 @@ export default function () {
                 Vaibhav Kesharwani
               </h5>
               <p className="md:text-lg text-base text-slate-700 font-medium">
-                Software Engineer | Data Scientist 
+                Software Engineer | Data Scientist
               </p>
             </div>
             <div className="md:w-4/5">
@@ -47,7 +47,7 @@ export default function () {
                 Design, making him the ultimate Freelancer to bring your idea to
                 life.
               </p>
-              <div className="flex gap-8 justify-center items-center">
+              <div className="flex gap-8 justify-center items-center mb-4">
                 <Link
                   href="https://www.linkedin.com/in/vaibhav-kesharwani//"
                   target="blank"
@@ -68,6 +68,47 @@ export default function () {
                   rel="noopener noreferrer"
                 >
                   <BsGithub className="w-6 h-6 fill-pink-500" />
+                </Link>
+              </div>
+
+              <div className="flex gap-8 justify-center items-center">
+                <Link
+                  href="https://www.fiverr.com/vaibbhavvk?public_mode=true"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/fiverr.svg"
+                    alt="fiverr icon"
+                    height={50}
+                    width={50}
+                  />
+                </Link>
+
+                <Link
+                  href="https://www.upwork.com/freelancers/~01e98ab6fa7c516372"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/upwork.svg"
+                    alt="upwork icon"
+                    height={30}
+                    width={30}
+                  />
+                </Link>
+
+                <Link
+                  href="https://www.freelancer.in/u/vaibbhavvk"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/freelancer.svg"
+                    alt="freelancer icon"
+                    height={30}
+                    width={30}
+                  />
                 </Link>
               </div>
             </div>
@@ -96,7 +137,7 @@ export default function () {
                 contributing to web projects including a blogging website and a
                 paperless water delivery system.
               </p>
-              <div className="flex gap-8 justify-center items-center">
+              <div className="flex gap-8 justify-center items-center mb-4">
                 <Link
                   href="https://www.linkedin.com/in/vivek-singh-bhadouria-427649200/"
                   target="blank"
@@ -117,6 +158,21 @@ export default function () {
                   rel="noopener noreferrer"
                 >
                   <BsGithub className="w-6 h-6 fill-pink-500" />
+                </Link>
+              </div>
+
+              <div className="flex gap-8 justify-center items-center">
+                <Link
+                  href="https://www.fiverr.com/vivek_bhadouria?public_mode=true"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src="/images/fiverr.svg"
+                    alt="fiverr icon"
+                    height={50}
+                    width={50}
+                  />
                 </Link>
               </div>
             </div>

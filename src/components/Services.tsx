@@ -75,6 +75,11 @@ export default function () {
           />
 
           <Service
+            heading="Landing Page/Portfolio Development"
+            icon={<BsCodeSlash className="fill-slate-700 h-12 w-12" />}
+          />
+
+          <Service
             heading="Database Design & Development"
             icon={<BsDatabase className="fill-slate-700 h-12 w-12" />}
           />
