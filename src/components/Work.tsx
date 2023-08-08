@@ -28,16 +28,16 @@ export default function () {
               title="Book Table"
               description="Table booking website application for restaurant and hotels. Functionalities like availaibilty and scheduling slot for booking."
             />
-            <Project
+            {/* <Project
               link="#"
               imgSrc="/images/1.webp"
               title="Uploading Soon"
               description="This is a dummy description for the project."
-            />
+            /> */}
           </div>
 
           {/* row 2 */}
-          <div className="space-y-12 mt-16">
+          {/* <div className="space-y-12 mt-16">
             <Project
               link="#"
               imgSrc="/images/2.webp"
@@ -51,7 +51,7 @@ export default function () {
               title="Uploading Soon"
               description="This is a dummy description for the project."
             />
-          </div>
+          </div> */}
         </div>
       </section>
     </Inview>
