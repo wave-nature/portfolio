@@ -34,6 +34,9 @@ export default function () {
         <nav className="md:block hidden">
           <ul className="flex gap-16">
             <li>
+              <Link href="#elements">Elements</Link>
+            </li>
+            <li>
               <Link href="#services">Services</Link>
             </li>
             <li>
