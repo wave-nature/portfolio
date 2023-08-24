@@ -3,16 +3,12 @@ import Inview from "./Inview";
 
 const ELEMENTS = [
   {
-    id: 1,
-    link: "https://shopitup.vercel.app/",
-  },
-
-  {
-    id: 1,
     link: "https://shopitup.vercel.app/",
   },
   {
-    id: 1,
+    link: "https://shopitup.vercel.app/",
+  },
+  {
     link: "https://shopitup.vercel.app/",
   },
 ];
@@ -35,20 +31,27 @@ export default function () {
         </div>
 
         {/* Projects */}
-        <div className="flex overflow-x-scroll">
-          <div className="flex gap-8 p-2">
-            {ELEMENTS.map((el) => (
-              <div key={el.id} className="space-y-2 border p-2">
+        <div className="w-full overflow-x-scroll">
+          <div
+            className={`flex gap-8 p-2`}
+            style={{ width: ELEMENTS.length * 30 + "rem" }}
+          >
+            {ELEMENTS.map((el, i) => (
+              <div key={i} className="space-y-4 border p-2">
                 <Link href={el.link} target="_blank">
                   <img
                     src="/images/elements/simple/shopitup.png"
-                    className="object-contain"
+                    className="object-contain hover:scale-110 transition duration-300"
                   />
                 </Link>
                 <div className="flex justify-center gap-2">
-                  <button className="border-green-500 border p-2 w-24">
+                  <Link
+                    href={el.link}
+                    target="_blank"
+                    className="border-green-500 border p-2 w-24 text-center "
+                  >
                     View
-                  </button>
+                  </Link>
                   <button className="bg-green-500 p-2 w-24 text-white">
                     Buy
                   </button>
