@@ -3,10 +3,10 @@ import Inview from "./Inview";
 
 const ELEMENTS = [
   {
-    link: "https://shopitup.vercel.app/",
+    link: "https://gigplaced-shopitup.vercel.app/",
   },
   {
-    link: "https://shopitup.vercel.app/",
+    link: "https://gigplaced-playful.vercel.app/",
   },
   {
     link: "https://shopitup.vercel.app/",
