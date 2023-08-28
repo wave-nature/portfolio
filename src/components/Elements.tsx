@@ -3,12 +3,15 @@ import Inview from "./Inview";
 
 const ELEMENTS = [
   {
+    img: "/images/elements/simple/shopitup.png",
     link: "https://gigplaced-shopitup.vercel.app/",
   },
   {
+    img: "/images/elements/playful/playful.png",
     link: "https://gigplaced-playful.vercel.app/",
   },
   {
+    img: "/images/elements/simple/shopitup.png",
     link: "https://shopitup.vercel.app/",
   },
 ];
@@ -40,7 +43,8 @@ export default function () {
               <div key={i} className="space-y-4 border p-2">
                 <Link href={el.link} target="_blank">
                   <img
-                    src="/images/elements/simple/shopitup.png"
+                    src={el.img}
+                    alt={el.link}
                     className="object-contain hover:scale-110 transition duration-300"
                   />
                 </Link>
