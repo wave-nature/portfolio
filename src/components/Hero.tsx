@@ -17,7 +17,7 @@ export default function () {
     <Inview id="hero">
       <section
         id="hero"
-        className="fade-out h-[70vh] md:h-[85vh] flex flex-col justify-center gap-5"
+        className="fade-out h-[70vh] md:h-[75vh] flex flex-col justify-center md:justify-start gap-5"
       >
         <div className="mb-1 md:mb-4">
           <h1 className="text-5xl sm:text-6xl md:text-7xl md:w-4/5 font-bold text-slate-800">
