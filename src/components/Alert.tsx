@@ -5,10 +5,13 @@ export default function () {
       style={{ textTransform: "capitalize" }}
     >
       <p>
-        We are introducing GigPlaced Elements, Not just ordinary templates for
-        sale, but we developers hold your back and provide you with the best
-        possible solution for your business needs.
-        <a href="#elements" className="text-pink-500 mx-2 font-semibold">
+        Introducing GigPlaced Elements, Not just ordinary templates for sale,
+        but we developers hold your back and provide you with the best possible
+        solution for your business needs.
+        <a
+          href="#elements"
+          className="text-pink-500 mx-2 font-semibold animate-pulse"
+        >
           Have a look
         </a>
       </p>
