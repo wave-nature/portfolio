@@ -85,6 +85,9 @@ export default function () {
           } transition duration-500 text-lg text-slate-800 space-y-8 mt-8`}
         >
           <li>
+            <Link href="#elements">Elements</Link>
+          </li>
+          <li>
             <Link href="#services">Services</Link>
           </li>
           <li>

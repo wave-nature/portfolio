@@ -3,16 +3,16 @@ import Inview from "./Inview";
 
 const ELEMENTS = [
   {
-    img: "/images/elements/simple/shopitup.png",
+    img: "/images/elements/simple/ecom-1.png",
     link: "https://gigplaced-shopitup.vercel.app/",
   },
   {
-    img: "/images/elements/playful/playful.png",
+    img: "/images/elements/playful/lp-1.png",
     link: "https://gigplaced-playful.vercel.app/",
   },
   {
-    img: "/images/elements/simple/shopitup.png",
-    link: "https://shopitup.vercel.app/",
+    img: "/images/elements/upbeat/lp-1.png",
+    link: "https://gigplaced-upbeat.vercel.app/",
   },
 ];
 
@@ -41,7 +41,11 @@ export default function () {
           >
             {ELEMENTS.map((el, i) => (
               <div key={i} className="space-y-4 border p-2">
-                <Link href={el.link} target="_blank">
+                <Link
+                  href={el.link}
+                  target="_blank"
+                  className="overflow-hidden"
+                >
                   <img
                     src={el.img}
                     alt={el.link}
@@ -60,13 +64,6 @@ export default function () {
                     Buy
                   </button>
                 </div>
-
-                {/* <Project
-              link="#"
-              imgSrc="/images/1.webp"
-              title="Uploading Soon"
-              description="This is a dummy description for the project."
-            /> */}
               </div>
             ))}
           </div>
