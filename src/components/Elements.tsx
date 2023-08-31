@@ -40,12 +40,8 @@ export default function () {
             style={{ width: ELEMENTS.length * 30 + "rem" }}
           >
             {ELEMENTS.map((el, i) => (
-              <div key={i} className="space-y-4 border p-2">
-                <Link
-                  href={el.link}
-                  target="_blank"
-                  className="overflow-hidden"
-                >
+              <div key={i} className="space-y-4 border p-2 overflow-hidden">
+                <Link href={el.link} target="_blank">
                   <img
                     src={el.img}
                     alt={el.link}
