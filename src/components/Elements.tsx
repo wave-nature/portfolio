@@ -7,7 +7,7 @@ const ELEMENTS = [
     link: "https://gigplaced-shopitup.vercel.app/",
   },
   {
-    img: "/images/elements/playful/lp-2.png",
+    img: "/images/elements/upbeat/lp-2.png",
     link: "https://gigplaced-lp-upbeat-2.vercel.app/",
   },
   {
