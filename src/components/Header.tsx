@@ -14,12 +14,21 @@ export default function () {
     <header className="px-5 py-3  md:px-10  md:py-6 w-full bg-white sticky top-0 border-b border-slate-50 shadow-sm z-10">
       <div className="flex justify-between items-center">
         <Link href="/" className=" text-xl md:text-2xl font-bold">
-          <Image
-            src="/images/logo.svg"
-            alt="GigPlaced"
-            width={180}
-            height={40}
-          />
+          {pathname === "/" ? (
+            <Image
+              src="/images/logo.svg"
+              alt="GigPlaced"
+              width={180}
+              height={40}
+            />
+          ) : (
+            <Image
+              src="/images/logo-elements.svg"
+              alt="GigPlaced"
+              width={180}
+              height={40}
+            />
+          )}
           {/* <svg
             width="180"
             height="40"
