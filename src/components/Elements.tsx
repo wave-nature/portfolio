@@ -1,5 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import Inview from "./Inview";
+import {
+  collection,
+  query,
+  where,
+  onSnapshot,
+  DocumentData,
+  orderBy,
+  limit,
+} from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { db } from "../../firebase.config";
+import ElementCard from "./ElementCard";
+import BlankCard from "./BlankCard";
 
 const ELEMENTS = [
   {
@@ -21,6 +36,23 @@ const ELEMENTS = [
 ];
 
 export default function () {
+  const [data, setData] = useState<DocumentData>([]);
+
+  useEffect(() => {
+    const q = query(collection(db, "elements"), orderBy("timestamp"), limit(3));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const templates: DocumentData[] = [];
+      querySnapshot.forEach((doc) => {
+        templates.push(doc.data());
+      });
+      setData(templates);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   return (
     <Inview id="elements">
       <section
@@ -41,9 +73,19 @@ export default function () {
         <div className="w-full overflow-x-scroll">
           <div
             className={`flex gap-8 p-2`}
-            style={{ width: ELEMENTS.length * 30 + "rem" }}
+            style={{ width: data.length * 30 + "rem" }}
           >
-            {ELEMENTS.map((el, i) => (
+            {data.map((element: any, index: number) => (
+              <ElementCard
+                key={index}
+                name={element.name}
+                price={element.price}
+                img={element.imageURL}
+                slug={element.slug}
+              />
+            ))}
+            <BlankCard />
+            {/* {ELEMENTS.map((el, i) => (
               <div key={i} className="space-y-4 border p-2 overflow-hidden">
                 <Link href={el.link} target="_blank">
                   <img
@@ -65,7 +107,7 @@ export default function () {
                   </button>
                 </div>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </section>

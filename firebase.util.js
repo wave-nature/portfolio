@@ -5,6 +5,7 @@ import {
   doc,
   query,
   where,
+  limit,
 } from "firebase/firestore";
 import { ref, getDownloadURL } from "firebase/storage";
 import { storage, db as firestore } from "./firebase.config.js";
@@ -24,12 +25,17 @@ export const listFeaturesOfElement = (element) => {
 };
 
 export const getElementBySlug = async (slug) => {
-  const q = query(collection(firestore, "elements"), where("slug", "==", slug));
+  const q = query(
+    collection(firestore, "elements"),
+    where("slug", "==", slug),
+    limit(1)
+  );
 
   const querySnapshot = await getDocs(q);
-  return querySnapshot[0].data();
+  return querySnapshot.docs[0].data();
 };
 
-export const getImageURL = (path) => {
-  return getDownloadURL(ref(storage, path));
+export const getImageURL = async (path) => {
+  const url = await getDownloadURL(ref(storage, path));
+  return url;
 };
