@@ -29,6 +29,8 @@ export default function ElementDetail() {
   const getElement = async (slug: any) => {
     const element = await getElementBySlug(slug);
 
+    console.log(element);
+
     setElement(element);
   };
 
