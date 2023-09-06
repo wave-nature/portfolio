@@ -29,6 +29,8 @@ export default function ElementDetail() {
   const getElement = async (slug: any) => {
     const element = await getElementBySlug(slug);
 
+    console.log(element);
+
     setElement(element);
   };
 
@@ -84,7 +86,7 @@ export default function ElementDetail() {
   };
 
   // Tech Stack Icon Mapper
-  const techIcons = {
+  const techIcons: { [key: string]: any } = {
     react: <SiReact />,
     daisyui: <SiDaisyui />,
     tailwindCSS: <SiTailwindcss />,
