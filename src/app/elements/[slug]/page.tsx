@@ -84,9 +84,9 @@ export default function ElementDetail() {
   };
 
   // Tech Stack Icon Mapper
-  const techIcons = {
+  const techIcons: { [key: string]: any } = {
     react: <SiReact />,
-    daisyui: <SiDaisyui />,
+    daisyUI: <SiDaisyui />,
     tailwindCSS: <SiTailwindcss />,
     materialUI: <SiMui />,
     bootstrap: <SiBootstrap />,
@@ -231,11 +231,18 @@ export default function ElementDetail() {
           </section>
           <div>
             <h2 className="text-xl md:text-2xl font-semibold mb-4">
-              Tech Stack Used
-              {element?.techstacks.map((tech: string, index: number) => (
-                <span key={index}>{techIcons[tech]}</span>
-              ))}
+              Tech Stack -
             </h2>
+            <div className="flex items-center pl-4 gap-4 text-3xl lg:text-4xl text-green-500 font-bold">
+              {element?.techstacks.map((tech: string, index: number) => (
+                <span
+                  key={index}
+                  className="cursor-pointer hover:scale-105 transition-all ease-in-out"
+                >
+                  {techIcons[tech]}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       )}
