@@ -12,7 +12,9 @@ import {
   SiTailwindcss,
   SiBootstrap,
   SiMui,
+  SiRedux,
 } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 import { LuArrowLeft } from "react-icons/lu";
 import { RxDotFilled } from "react-icons/rx";
 import { getElementBySlug } from "../../../../firebase.util";
@@ -92,6 +94,9 @@ export default function ElementDetail() {
     tailwindCSS: <SiTailwindcss />,
     materialUI: <SiMui />,
     bootstrap: <SiBootstrap />,
+    next: <TbBrandNextjs />,
+    zustand: "Zustand",
+    redux: <SiRedux />,
   };
 
   return (
@@ -237,10 +242,7 @@ export default function ElementDetail() {
             </h2>
             <div className="flex items-center pl-4 gap-4 text-3xl lg:text-4xl text-green-500 font-bold">
               {element?.techstacks.map((tech: string, index: number) => (
-                <span
-                  key={index}
-                  className="cursor-pointer hover:scale-105 transition-all ease-in-out"
-                >
+                <span key={index} className="cursor-pointer ">
                   {techIcons[tech]}
                 </span>
               ))}
