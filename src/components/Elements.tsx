@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Inview from "./Inview";
 import {
   collection,
@@ -12,6 +11,8 @@ import {
   limit,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import ContentLoader from "react-content-loader";
+
 import { db } from "../../firebase.config";
 import ElementCard from "./ElementCard";
 import BlankCard from "./BlankCard";
@@ -37,6 +38,7 @@ const ELEMENTS = [
 
 export default function () {
   const [data, setData] = useState<DocumentData>([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     const q = query(collection(db, "elements"), orderBy("timestamp"), limit(3));
@@ -46,6 +48,7 @@ export default function () {
         templates.push(doc.data());
       });
       setData(templates);
+      setLoader(false);
     });
 
     return () => {
@@ -70,22 +73,33 @@ export default function () {
         </div>
 
         {/* Projects */}
-        <div className="w-full overflow-x-scroll">
-          <div
-            className={`flex gap-8 p-2`}
-            style={{ width: data.length * 30 + "rem" }}
-          >
-            {data.map((element: any, index: number) => (
-              <ElementCard
-                key={index}
-                name={element.name}
-                price={element.price}
-                img={element.imageURL}
-                slug={element.slug}
-              />
+        {loader ? (
+          <div className="flex gap-5 h-92">
+            {Array.from({ length: 3 }).map((_, i: number) => (
+              <ContentLoader key={i} viewBox="0 0 500 200">
+                {/* Only SVG shapes */}
+                <rect x="0" y="0" rx="3" ry="3" width="100%" height="300" />
+                <rect x="0" y="40" rx="3" ry="10" width="100" height="10" />
+              </ContentLoader>
             ))}
-            <BlankCard />
-            {/* {ELEMENTS.map((el, i) => (
+          </div>
+        ) : (
+          <div className="w-full overflow-x-scroll">
+            <div
+              className={`flex gap-8 p-2`}
+              style={{ width: data.length * 30 + "rem" }}
+            >
+              {data.map((element: any, index: number) => (
+                <ElementCard
+                  key={index}
+                  name={element.name}
+                  price={element.price}
+                  img={element.imageURL}
+                  slug={element.slug}
+                />
+              ))}
+              <BlankCard />
+              {/* {ELEMENTS.map((el, i) => (
               <div key={i} className="space-y-4 border p-2 overflow-hidden">
                 <Link href={el.link} target="_blank">
                   <img
@@ -108,8 +122,9 @@ export default function () {
                 </div>
               </div>
             ))} */}
+            </div>
           </div>
-        </div>
+        )}
       </section>
     </Inview>
   );

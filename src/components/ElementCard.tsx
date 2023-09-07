@@ -1,5 +1,4 @@
 import { LuArrowRight } from "react-icons/lu";
-import { getImageURL } from "../../firebase.util";
 import Link from "next/link";
 
 export default function ({
@@ -32,7 +31,9 @@ export default function ({
       </a> */}
         <div className="flex items-center justify-between mt-3 px-1">
           <h4 className="text-lg font-semibold">{name}</h4>
-          <h5 className="text-gray-600 font-semibold">${price}</h5>
+          <h5 className="text-white font-semibold bg-green-500 py-1 px-2">
+            ${price}
+          </h5>
         </div>
       </div>
     </Link>

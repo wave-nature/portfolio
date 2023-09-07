@@ -78,7 +78,10 @@ export default function ElementDetail() {
 
   return (
     <main className="mt-16 md:px-28 px-4 space-y-12 min-h-screen">
-      <button onClick={() => router.replace("/elements")}>
+      <button
+        className="bg-slate-200 shadow-sm rounded-full w-12 h-12 flex items-center justify-center hover:bg-slate-300"
+        onClick={() => router.replace("/elements")}
+      >
         <LuArrowLeft />
       </button>
       {element && (
