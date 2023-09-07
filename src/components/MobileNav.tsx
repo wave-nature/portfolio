@@ -79,7 +79,9 @@ const Option = ({
       onClick={() => setOpen(false)}
       className="flex items-center gap-2 w-full p-2 font-medium whitespace-nowrap rounded-md transition-colors cursor-pointer duration-500 text-lg text-slate-800 space-y-8 mt-8"
     >
-      <Link href={href}>{text}</Link>
+      <Link href={href} className="w-full">
+        {text}
+      </Link>
     </motion.li>
   );
 };
