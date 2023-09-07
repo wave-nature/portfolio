@@ -127,7 +127,7 @@ export default function ElementDetail() {
                 {element?.shortDesc}
               </p>
               <div className="mt-3 flex item-center justify-start gap-8">
-                <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600">
+                <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                   Buy ${element?.price}
                 </button>
                 <Link
@@ -135,7 +135,7 @@ export default function ElementDetail() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <button className="flex justify-start gap-2 text-semibold group bg-slate-200 px-3 py-2 rounded-sm hover:bg-slate-300">
+                  <button className="flex justify-start group gap-2 text-semibold bg-slate-200 px-3 py-2 rounded-sm hover:bg-slate-300 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                     Preview
                     <BsArrowUpRight className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-all ease-in-out" />
                   </button>

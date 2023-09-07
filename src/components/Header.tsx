@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import MobileNav from "./MobileNav";
 
 export default function () {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -63,7 +64,7 @@ export default function () {
           </nav>
         )}
 
-        <button
+        {/* <button
           className="text-gray-500 w-10 h-10 relative focus:outline-none bg-white block md:hidden"
           onClick={() => setToggle(!toggle)}
         >
@@ -82,15 +83,16 @@ export default function () {
             />
             <span
               aria-hidden="true"
-              className={`block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out ${
+              className={`block absolute h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out ${
                 toggle ? "-rotate-45" : "translate-y-1.5"
               }`}
             />
           </div>
-        </button>
+        </button> */}
+        <MobileNav />
       </div>
 
-      {pathname === "/" ? (
+      {/* {pathname === "/" ? (
         <nav className="md:hidden flex justify-center transition-all">
           <ul
             className={`${
@@ -126,7 +128,7 @@ export default function () {
             </li>
           </ul>
         </nav>
-      )}
+      )} */}
     </header>
   );
 }
