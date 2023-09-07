@@ -8,7 +8,7 @@ import {
   onSnapshot,
   DocumentData,
 } from "firebase/firestore";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../../../firebase.config";
 
 export default function Elements() {

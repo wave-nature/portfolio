@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import MobileNav from "./MobileNav";
 
 export default function () {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -14,7 +15,7 @@ export default function () {
     <header className="px-5 py-3  md:px-10  md:py-6 w-full bg-white sticky top-0 border-b border-slate-50 shadow-sm z-10">
       <div className="flex justify-between items-center">
         {pathname === "/" ? (
-          <Link href="/" className=" text-xl md:text-2xl font-bold">
+          <Link href="/" className="text-xl md:text-2xl font-bold">
             <Image
               src="/images/logo.svg"
               alt="GigPlaced"
@@ -23,11 +24,11 @@ export default function () {
             />
           </Link>
         ) : (
-          <Link href="/elements" className=" text-xl md:text-2xl font-bold">
+          <Link href="/elements" className="text-xl md:text-2xl font-bold">
             <Image
               src="/images/logo-elements.svg"
               alt="GigPlaced"
-              width={180}
+              width={300}
               height={40}
             />
           </Link>
@@ -63,7 +64,7 @@ export default function () {
           </nav>
         )}
 
-        <button
+        {/* <button
           className="text-gray-500 w-10 h-10 relative focus:outline-none bg-white block md:hidden"
           onClick={() => setToggle(!toggle)}
         >
@@ -82,15 +83,16 @@ export default function () {
             />
             <span
               aria-hidden="true"
-              className={`block absolute  h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out ${
+              className={`block absolute h-0.5 w-5 bg-current transform  transition duration-500 ease-in-out ${
                 toggle ? "-rotate-45" : "translate-y-1.5"
               }`}
             />
           </div>
-        </button>
+        </button> */}
+        <MobileNav />
       </div>
 
-      {pathname === "/" ? (
+      {/* {pathname === "/" ? (
         <nav className="md:hidden flex justify-center transition-all">
           <ul
             className={`${
@@ -126,7 +128,7 @@ export default function () {
             </li>
           </ul>
         </nav>
-      )}
+      )} */}
     </header>
   );
 }

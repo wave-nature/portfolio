@@ -6,6 +6,15 @@ import {
   BsChevronCompactRight,
   BsArrowUpRight,
 } from "react-icons/bs";
+import {
+  SiDaisyui,
+  SiReact,
+  SiTailwindcss,
+  SiBootstrap,
+  SiMui,
+  SiRedux,
+} from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
 import { LuArrowLeft } from "react-icons/lu";
 import { RxDotFilled } from "react-icons/rx";
 import { getElementBySlug } from "../../../../firebase.util";
@@ -76,6 +85,18 @@ export default function ElementDetail() {
     setActiveIndex(index === activeIndex ? null : index);
   };
 
+  // Tech Stack Icon Mapper
+  const techIcons: { [key: string]: any } = {
+    react: <SiReact />,
+    daisyUI: <SiDaisyui />,
+    tailwindCSS: <SiTailwindcss />,
+    materialUI: <SiMui />,
+    bootstrap: <SiBootstrap />,
+    next: <TbBrandNextjs />,
+    zustand: "Zustand",
+    redux: <SiRedux />,
+  };
+
   return (
     <main className="mt-16 md:px-28 px-4 space-y-12 min-h-screen">
       <button
@@ -107,7 +128,7 @@ export default function ElementDetail() {
                 {element?.shortDesc}
               </p>
               <div className="mt-3 flex item-center justify-start gap-8">
-                <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600">
+                <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                   Buy ${element?.price}
                 </button>
                 <Link
@@ -115,7 +136,7 @@ export default function ElementDetail() {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <button className="flex justify-start gap-2 text-semibold group bg-slate-200 px-3 py-2 rounded-sm hover:bg-slate-300">
+                  <button className="flex justify-start group gap-2 text-semibold bg-slate-200 px-3 py-2 rounded-sm hover:bg-slate-300 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                     Preview
                     <BsArrowUpRight className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-all ease-in-out" />
                   </button>
@@ -123,10 +144,10 @@ export default function ElementDetail() {
               </div>
             </div>
           </div>
-          <div className="max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group">
+          <div className="max-w-[1400px] h-[60vh] md:h-[70vh] lg:h-[700px] w-full m-auto py-16 px-1 md:px-4 relative group">
             <div
               style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-              className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+              className="w-full h-full rounded-xl md:rounded-2xl bg-cover duration-500"
             ></div>
             {/* Left Arrow */}
             <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
@@ -155,8 +176,8 @@ export default function ElementDetail() {
             <p className="text-slate-600">{element?.longDesc}</p>
           </div>
           <section className="h-auto  w-full mx-auto py-8 bg-white">
-            <div className="w-[95%] max-w-7xl mx-auto  my-8 ">
-              <h5 className="font-medium text-center text-transparent text-xl bg-clip-text bg-gradient-to-t from-sky-500 to-purple-600 mb-4">
+            <div className="w-[95%] max-w-7xl my-8 ">
+              <h5 className="text-xl md:text-2xl font-semibold mb-4">
                 Features
               </h5>
               <div className="transition-all ease-in-out">
@@ -216,6 +237,18 @@ export default function ElementDetail() {
               </div>
             </div>
           </section>
+          <div>
+            <h2 className="text-xl md:text-2xl font-semibold mb-4">
+              Tech Stack
+            </h2>
+            <div className="flex items-center gap-4 text-3xl lg:text-4xl text-green-500 font-bold">
+              {element?.techstacks.map((tech: string, index: number) => (
+                <span key={index} className="cursor-pointer ">
+                  {techIcons[tech]}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </main>
