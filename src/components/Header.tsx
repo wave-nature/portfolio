@@ -14,21 +14,21 @@ export default function () {
   return (
     <header className="px-5 py-3  md:px-10  md:py-6 w-full bg-white sticky top-0 border-b border-slate-50 shadow-sm z-10">
       <div className="flex justify-between items-center">
-        {pathname === "/" ? (
-          <Link href="/" className="text-xl md:text-2xl font-bold">
-            <Image
-              src="/images/logo.svg"
-              alt="GigPlaced"
-              width={180}
-              height={40}
-            />
-          </Link>
-        ) : (
+        {pathname.includes("elements") ? (
           <Link href="/elements" className="text-xl md:text-2xl font-bold">
             <Image
               src="/images/logo-elements.svg"
               alt="GigPlaced"
               width={300}
+              height={40}
+            />
+          </Link>
+        ) : (
+          <Link href="/" className="text-xl md:text-2xl font-bold">
+            <Image
+              src="/images/logo.svg"
+              alt="GigPlaced"
+              width={180}
               height={40}
             />
           </Link>

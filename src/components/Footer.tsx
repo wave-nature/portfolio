@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BsEnvelope, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { BsEnvelope, BsLinkedin } from "react-icons/bs";
 import Inview from "./Inview";
 import ContactModal from "./Modal";
 import Image from "next/image";
@@ -20,28 +20,30 @@ export default function () {
         </div>
 
         {/* links and icons */}
-        <section className="space-y-16">
-          {/* <nav>
-          <ul className="flex md:flex-row flex-col gap-16 ">
-            <li>
-              <Link className="text-pink-500" href="#hero">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#services">Services</Link>
-            </li>
-            <li>
-              <Link href="#work">Work</Link>
-            </li>
-            <li>
-              <Link href="#about">About Us</Link>
-            </li>
-            <li>
-              <Link href="#contact">Contact</Link>
-            </li>
-          </ul>
-        </nav> */}
+        <section className="space-y-16 mx-auto md:mx-0">
+          <nav>
+            <ul className="flex md:flex-row flex-col gap-16 ">
+              <li>
+                <Link className="text-pink-500" href="/terms-conditions">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/refund-policy">Refund Policy</Link>
+              </li>
+              <li>
+                <Link href="/cancellation-shipping-policy">
+                  Cancellation And Shipping Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact">Contact</Link>
+              </li>
+            </ul>
+          </nav>
 
           <div className="flex md:flex-row flex-col items-center justify-between gap-4">
             <div className="flex gap-8 items-center">
