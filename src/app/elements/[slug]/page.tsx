@@ -175,8 +175,8 @@ export default function ElementDetail() {
             <p className="text-slate-600">{element?.longDesc}</p>
           </div>
           <section className="h-auto  w-full mx-auto py-8 bg-white">
-            <div className="w-[95%] max-w-7xl mx-auto  my-8 ">
-              <h5 className="text-xl md:text-2xl font-semibold mb-4 text-center">
+            <div className="w-[95%] max-w-7xl my-8 ">
+              <h5 className="text-xl md:text-2xl font-semibold mb-4">
                 Features
               </h5>
               <div className="transition-all ease-in-out">
@@ -238,9 +238,9 @@ export default function ElementDetail() {
           </section>
           <div>
             <h2 className="text-xl md:text-2xl font-semibold mb-4">
-              Tech Stack -
+              Tech Stack
             </h2>
-            <div className="flex items-center pl-4 gap-4 text-3xl lg:text-4xl text-green-500 font-bold">
+            <div className="flex items-center gap-4 text-3xl lg:text-4xl text-green-500 font-bold">
               {element?.techstacks.map((tech: string, index: number) => (
                 <span key={index} className="cursor-pointer ">
                   {techIcons[tech]}
