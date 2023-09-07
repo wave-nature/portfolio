@@ -8,7 +8,7 @@ const MobileNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex items-center justify-center bg-white">
+    <div className="md:hidden flex items-center justify-center bg-white">
       <motion.div animate={open ? "open" : "closed"} className="relative">
         <button
           className="text-gray-500 w-10 h-10 relative focus:outline-none bg-white block md:hidden"
@@ -41,7 +41,9 @@ const MobileNav = () => {
             initial={wrapperVariants.closed}
             variants={wrapperVariants}
             style={{ originY: "top", translateX: "-50%" }}
-            className="md:hidden flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden"
+            className={`${
+              open ? "block" : "hidden"
+            } flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden`}
           >
             <Option setOpen={setOpen} text="Elements" href="#elements" />
             <Option setOpen={setOpen} text="Services" href="#services" />
