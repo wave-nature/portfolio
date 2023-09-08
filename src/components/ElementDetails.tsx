@@ -20,6 +20,7 @@ import { LuArrowLeft } from "react-icons/lu";
 import { RxDotFilled } from "react-icons/rx";
 import type { SanityDocument } from "@sanity/client";
 import Link from "next/link";
+import { urlForImage } from "../../sanity/lib/image";
 
 export default function ElementDetails({
   element,
@@ -51,12 +52,14 @@ export default function ElementDetails({
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const newIndex = isFirstSlide
+      ? element?.images?.length - 1
+      : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
+    const isLastSlide = currentIndex === element?.images?.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
@@ -64,8 +67,6 @@ export default function ElementDetails({
   const goToSlide = (slideIndex: number) => {
     setCurrentIndex(slideIndex);
   };
-
-  const subCategories = ["Joy", "Upbeat", "Template"];
 
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -102,7 +103,7 @@ export default function ElementDetails({
             <div className="mt-6">
               {element?.tags?.map((tag: { name: string }, index: number) => (
                 <span
-                  className="inline-block text-slate-800 px-3 py-2 bg-stone-200 rounded-sm my-3 mr-3 text-sm font-medium hover:bg-stone-300 cursor-pointer"
+                  className="inline-block text-slate-800 px-3 py-2 bg-stone-200 rounded-sm my-3 mr-3 text-sm font-medium cursor-default"
                   key={index}
                 >
                   {tag?.name}
@@ -115,8 +116,11 @@ export default function ElementDetails({
               {element?.shortDesc[0]?.children[0]?.text}
             </p>
             <div className="mt-3 flex item-center justify-start gap-8">
-              <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+              {/* <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                 Buy ${element?.price}
+              </button> */}
+              <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+                Interested?
               </button>
               <Link
                 href={element?.previewURL}
@@ -133,7 +137,13 @@ export default function ElementDetails({
         </div>
         <div className="max-w-[1400px] h-[60vh] md:h-[70vh] lg:h-[700px] w-full m-auto py-16 px-1 md:px-4 relative group">
           <div
-            style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+            style={{
+              backgroundImage: `url(${urlForImage(element?.images[currentIndex])
+                .url()
+                .toString()})`,
+              backgroundPosition: `50% 0`,
+              backgroundRepeat: `no-repeat`,
+            }}
             className="w-full h-full rounded-xl md:rounded-2xl bg-cover duration-500"
           ></div>
           {/* Left Arrow */}
@@ -145,7 +155,7 @@ export default function ElementDetails({
             <BsChevronCompactRight onClick={nextSlide} size={30} />
           </div>
           <div className="flex items-center top-4 justify-center py-2">
-            {slides.map((slide, slideIndex) => (
+            {element?.images?.map((slide: any, slideIndex: number) => (
               <div
                 key={slideIndex}
                 onClick={() => goToSlide(slideIndex)}

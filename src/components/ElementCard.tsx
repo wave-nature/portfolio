@@ -15,7 +15,6 @@ export default function ({
   mainImage: string;
   alt: string;
 }) {
-  console.log(slug);
   return (
     <Link href={`/elements/${slug}`}>
       <div className="group relative cursor-pointer">
