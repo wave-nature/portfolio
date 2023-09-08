@@ -21,6 +21,8 @@ import { RxDotFilled } from "react-icons/rx";
 import type { SanityDocument } from "@sanity/client";
 import Link from "next/link";
 import { urlForImage } from "../../sanity/lib/image";
+import ContactModal from "./Modal";
+import InterestedModal from "./InterestedModal";
 
 export default function ElementDetails({
   element,
@@ -119,9 +121,8 @@ export default function ElementDetails({
               {/* <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                 Buy ${element?.price}
               </button> */}
-              <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-                Interested?
-              </button>
+              <InterestedModal />
+
               <Link
                 href={element?.previewURL}
                 rel="noopener noreferrer"
