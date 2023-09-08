@@ -1,21 +1,32 @@
 // fields
 
-const elementFields = `_id,
+const allElementFields = `_id,
 name,
-slug,
+"slug": slug.current,
+price,
+mainImage,
+timestamp
+`;
+
+const elementBySlugFields = `_id,
+name,
 price,
 previewURL,
-features,
-techStack,
+features[] -> {name, desc},
+techStack[] -> {shortName},
+tags[] -> {name},
 images,
 mainImage,
 longDesc,
 shortDesc,
-timestamp
 `;
 
 // queries
 
 export const allElementsQuery = `*[_type == "element"] {
-  ${elementFields}
+  ${allElementFields}
+}`;
+
+export const elementBySlugQuery = `*[_type == "element" && slug.current == $slug] {
+    ${elementBySlugFields}
 }`;

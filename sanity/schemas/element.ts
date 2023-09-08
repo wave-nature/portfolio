@@ -42,6 +42,12 @@ export default defineType({
       of: [{ type: "reference", to: { type: "tech" } }],
     }),
     defineField({
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "reference", to: { type: "tag" } }],
+    }),
+    defineField({
       name: "images",
       title: "Images",
       type: "array",

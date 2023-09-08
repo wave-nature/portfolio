@@ -6,14 +6,18 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import Work from "@/components/Work";
+import { Suspense } from "react";
+import { getElements } from "../../sanity/lib/utils";
 
-export default function Home() {
+export default async function Home() {
+  const elements = await getElements();
+
   return (
     <main className="mt-16 md:px-28 px-4 space-y-28">
       <Alert />
       <Hero />
       <Services />
-      <Elements />
+      <Elements elements={elements} />
       <Work />
       <AboutUs />
       <Testimonials />

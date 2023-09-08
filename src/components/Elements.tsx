@@ -12,10 +12,13 @@ import {
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import ContentLoader from "react-content-loader";
+import type { SanityDocument } from "@sanity/client";
 
 import { db } from "../../firebase.config";
 import ElementCard from "./ElementCard";
 import BlankCard from "./BlankCard";
+import { getElements } from "../../sanity/lib/utils";
+import { urlForImage } from "../../sanity/lib/image";
 
 const ELEMENTS = [
   {
@@ -36,7 +39,7 @@ const ELEMENTS = [
   },
 ];
 
-export default function () {
+export default function ({ elements = [] }: { elements: SanityDocument[] }) {
   const [data, setData] = useState<DocumentData>([]);
   const [loader, setLoader] = useState(true);
 
@@ -89,13 +92,14 @@ export default function () {
               className={`flex gap-8 p-2`}
               style={{ width: data.length * 30 + "rem" }}
             >
-              {data.map((element: any, index: number) => (
+              {elements.map((element: any, index: number) => (
                 <ElementCard
                   key={index}
-                  name={element.name}
-                  price={element.price}
-                  img={element.imageURL}
-                  slug={element.slug}
+                  name={element?.name}
+                  price={element?.price}
+                  mainImage={urlForImage(element?.mainImage).url().toString()}
+                  alt={element?.mainImage?.alt}
+                  slug={element?.slug}
                 />
               ))}
               <BlankCard />
