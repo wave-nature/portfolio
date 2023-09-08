@@ -86,8 +86,7 @@ export default defineType({
 
   preview: {
     select: {
-      name: "name",
-      slug: "slug",
+      title: "name",
       media: "mainImage",
     },
   },
