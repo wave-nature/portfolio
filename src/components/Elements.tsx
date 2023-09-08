@@ -40,24 +40,7 @@ const ELEMENTS = [
 ];
 
 export default function ({ elements = [] }: { elements: SanityDocument[] }) {
-  const [data, setData] = useState<DocumentData>([]);
   const [loader, setLoader] = useState(true);
-
-  useEffect(() => {
-    const q = query(collection(db, "elements"), orderBy("timestamp"), limit(3));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const templates: DocumentData[] = [];
-      querySnapshot.forEach((doc) => {
-        templates.push(doc.data());
-      });
-      setData(templates);
-      setLoader(false);
-    });
-
-    return () => {
-      unsubscribe();
-    };
-  }, []);
 
   return (
     <Inview id="elements">
@@ -75,35 +58,21 @@ export default function ({ elements = [] }: { elements: SanityDocument[] }) {
           </h2>
         </div>
 
-        {/* Projects */}
-        {loader ? (
-          <div className="flex gap-5 h-92">
-            {Array.from({ length: 3 }).map((_, i: number) => (
-              <ContentLoader key={i} viewBox="0 0 500 200">
-                {/* Only SVG shapes */}
-                <rect x="0" y="0" rx="3" ry="3" width="100%" height="300" />
-                <rect x="0" y="40" rx="3" ry="10" width="100" height="10" />
-              </ContentLoader>
+        {/* Elements */}
+        <div className="w-full overflow-x-scroll">
+          <div className={`flex gap-8 p-2`} style={{ width: 90 + "rem" }}>
+            {elements?.map((element: any, index: number) => (
+              <ElementCard
+                key={index}
+                name={element?.name}
+                price={element?.price}
+                mainImage={urlForImage(element?.mainImage).url().toString()}
+                alt={element?.mainImage?.alt}
+                slug={element?.slug}
+              />
             ))}
-          </div>
-        ) : (
-          <div className="w-full overflow-x-scroll">
-            <div
-              className={`flex gap-8 p-2`}
-              style={{ width: data.length * 30 + "rem" }}
-            >
-              {elements.map((element: any, index: number) => (
-                <ElementCard
-                  key={index}
-                  name={element?.name}
-                  price={element?.price}
-                  mainImage={urlForImage(element?.mainImage).url().toString()}
-                  alt={element?.mainImage?.alt}
-                  slug={element?.slug}
-                />
-              ))}
-              <BlankCard />
-              {/* {ELEMENTS.map((el, i) => (
+            <BlankCard />
+            {/* {ELEMENTS.map((el, i) => (
               <div key={i} className="space-y-4 border p-2 overflow-hidden">
                 <Link href={el.link} target="_blank">
                   <img
@@ -126,9 +95,8 @@ export default function ({ elements = [] }: { elements: SanityDocument[] }) {
                 </div>
               </div>
             ))} */}
-            </div>
           </div>
-        )}
+        </div>
       </section>
     </Inview>
   );
