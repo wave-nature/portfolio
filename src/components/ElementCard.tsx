@@ -23,7 +23,7 @@ export default function ({
           alt={alt}
           className="min-h-[250px] w-[20rem] md:w-[24rem] rounded-lg shadow-sm group-hover:shadow-xl border border-gray-500 border-opacity-20 transition-all ease-in-out"
         />
-        <span className="absolute text-lg top-4 right-4 hidden group-hover:flex w-10 h-10 bg-white shadow-md items-center justify-center rounded-full transition-all ease-in-out">
+        <span className="absolute text-lg top-4 right-8 hidden group-hover:flex w-10 h-10 bg-white shadow-md items-center justify-center rounded-full transition-all ease-in-out">
           <LuArrowRight />
         </span>
         <div className="flex items-center justify-between mt-3 px-1">
