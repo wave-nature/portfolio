@@ -75,7 +75,8 @@ export default function InterestedModal() {
                 className="md:text-2xl text-lg text-pink-500 font-semibold"
                 htmlFor="name"
               >
-                You're just one step away from receiving your free element!
+                You're just one step away from receiving your complementary
+                element!
               </label>
               <input
                 className="outline-slate-700 border-slate-700 border-2 px-4 py-2 text-lg font-semibold"
@@ -86,7 +87,7 @@ export default function InterestedModal() {
                 value={email}
               />
               <button className="bg-purple-700 text-white px-4 py-2 rounded">
-                Let's Build{" "}
+                Grab it now!
                 {loader && <CircularProgress size={20} color="inherit" />}
               </button>
             </form>

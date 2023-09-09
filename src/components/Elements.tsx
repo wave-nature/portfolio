@@ -19,6 +19,8 @@ import ElementCard from "./ElementCard";
 import BlankCard from "./BlankCard";
 import { getElements } from "../../sanity/lib/utils";
 import { urlForImage } from "../../sanity/lib/image";
+import { useRouter } from "next/navigation";
+import { BsArrowRight } from "react-icons/bs";
 
 const ELEMENTS = [
   {
@@ -42,6 +44,8 @@ const ELEMENTS = [
 export default function ({ elements = [] }: { elements: SanityDocument[] }) {
   const [loader, setLoader] = useState(true);
 
+  const router = useRouter();
+
   return (
     <Inview id="elements">
       <section
@@ -59,20 +63,24 @@ export default function ({ elements = [] }: { elements: SanityDocument[] }) {
         </div>
 
         {/* Elements */}
-        <div className="w-full overflow-x-scroll">
-          <div className={`flex gap-8 p-2`} style={{ width: 90 + "rem" }}>
-            {elements?.map((element: any, index: number) => (
-              <ElementCard
-                key={index}
-                name={element?.name}
-                price={element?.price}
-                mainImage={urlForImage(element?.mainImage).url().toString()}
-                alt={element?.mainImage?.alt}
-                slug={element?.slug}
-              />
-            ))}
-            <BlankCard />
-            {/* {ELEMENTS.map((el, i) => (
+        <div>
+          <div className="w-full overflow-x-scroll">
+            <div
+              className={`flex gap-8 p-2`}
+              style={{ width: elements?.length * 30 + "rem" }}
+            >
+              {elements?.map((element: any, index: number) => (
+                <ElementCard
+                  key={index}
+                  name={element?.name}
+                  price={element?.price}
+                  mainImage={urlForImage(element?.mainImage).url().toString()}
+                  alt={element?.mainImage?.alt}
+                  slug={element?.slug}
+                />
+              ))}
+              <BlankCard />
+              {/* {ELEMENTS.map((el, i) => (
               <div key={i} className="space-y-4 border p-2 overflow-hidden">
                 <Link href={el.link} target="_blank">
                   <img
@@ -95,7 +103,15 @@ export default function ({ elements = [] }: { elements: SanityDocument[] }) {
                 </div>
               </div>
             ))} */}
+            </div>
           </div>
+
+          <button
+            className="border-2 group border-slate-600 hover:border-dashed w-48 md:w-60 py-3 md:py-4 mt-12 text-md md:text-xl"
+            onClick={() => router.push("/elements")}
+          >
+            <span>View all elements</span>
+          </button>
         </div>
       </section>
     </Inview>
