@@ -21,9 +21,14 @@ export default function () {
       >
         <div className="mb-1 md:mb-4">
           <h1 className="text-5xl sm:text-6xl md:text-7xl md:w-4/5 font-bold text-slate-800">
+            We are here to turn your on-paper
+            <span className="text-gradient"> dreams into reality.</span>
+          </h1>
+
+          {/* <h1 className="text-5xl sm:text-6xl md:text-7xl md:w-4/5 font-bold text-slate-800">
             We are here to make your on-paper{" "}
             <span className="text-gradient"> dream real.</span>
-          </h1>
+          </h1> */}
         </div>
 
         <h3 className="text-xl md:text-3xl font-light text-slate-600 md:w-2/3 mb-4 md:mb-12">

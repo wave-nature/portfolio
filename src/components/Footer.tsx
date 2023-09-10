@@ -40,7 +40,7 @@ export default function () {
                 </Link>
               </li>
               <li>
-                <Link href="#contact">Contact</Link>
+                <Link href="/contact-us">Contact</Link>
               </li>
             </ul>
           </nav>

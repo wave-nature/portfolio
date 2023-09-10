@@ -58,8 +58,8 @@ export default function ContactModal() {
         </span>
       </button>
       <p className="md:text-lg text-sm mt-8 text-slate-500 font-bold">
-        We understand and believe in pay us only when you satisfied by our work
-        policy ✌
+        We believe in a 'pay us only when you are satisfied with our work'
+        policy, which we fully understand and endorse ✌
       </p>
       <Modal
         open={open}

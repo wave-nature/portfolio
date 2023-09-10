@@ -23,6 +23,7 @@ import Link from "next/link";
 import { urlForImage } from "../../sanity/lib/image";
 import ContactModal from "./Modal";
 import InterestedModal from "./InterestedModal";
+import { Slideshow } from "./Slideshow";
 
 export default function ElementDetails({
   element,
@@ -136,7 +137,12 @@ export default function ElementDetails({
             </div>
           </div>
         </div>
-        <div className="max-w-[1400px] h-[60vh] md:h-[70vh] lg:h-[700px] w-full m-auto py-16 px-1 md:px-4 relative group">
+
+        <div className="relative max-w-[1400px] h-[50vh] md:h-[70vh] lg:h-[700px] w-full overflow-hidden py-16">
+          <Slideshow images={element?.images} />
+        </div>
+
+        {/* <div className="max-w-[1400px] h-[60vh] md:h-[70vh] lg:h-[700px] w-full m-auto py-16 px-1 md:px-4 relative group">
           <div
             style={{
               backgroundImage: `url(${urlForImage(element?.images[currentIndex])
@@ -147,11 +153,11 @@ export default function ElementDetails({
             }}
             className="w-full h-full rounded-xl md:rounded-2xl bg-cover duration-500"
           ></div>
-          {/* Left Arrow */}
+          Left Arrow
           <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
             <BsChevronCompactLeft onClick={prevSlide} size={30} />
           </div>
-          {/* Right Arrow */}
+          Right Arrow
           <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
             <BsChevronCompactRight onClick={nextSlide} size={30} />
           </div>
@@ -168,7 +174,8 @@ export default function ElementDetails({
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
+        
         <div>
           <h2 className="text-xl md:text-2xl font-semibold mb-4">Details</h2>
           <p className="text-slate-600">
