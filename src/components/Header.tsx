@@ -50,7 +50,7 @@ export default function () {
                 <Link href="#about">About Us</Link>
               </li>
               <li>
-                <Link href="#footer">Contact</Link>
+                <Link href="#footer">Connect</Link>
               </li>
             </ul>
           </nav>

@@ -49,7 +49,7 @@ const MobileNav = () => {
             <Option setOpen={setOpen} text="Services" href="#services" />
             <Option setOpen={setOpen} text="Work" href="#work" />
             <Option setOpen={setOpen} text="About us" href="#about" />
-            <Option setOpen={setOpen} text="Contact" href="#footer" />
+            <Option setOpen={setOpen} text="Connect" href="#footer" />
           </motion.ul>
         ) : (
           <motion.ul
