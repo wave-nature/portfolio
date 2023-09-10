@@ -1,3 +1,5 @@
+"use client";
+
 import ElementCard from "@/components/ElementCard";
 const img = "/images/elements/simple/ecom-1.png";
 import {
@@ -9,9 +11,28 @@ import {
 import { db } from "../../../firebase.config";
 import { urlForImage } from "../../../sanity/lib/image";
 import { getElements } from "../../../sanity/lib/utils";
+import { getCountry, getUsdToInr } from "@/request";
+import { useContext, useEffect, useState } from "react";
+import { StoreContext } from "@/store";
+import Loader from "@/components/Loader";
 
-export default async function Elements() {
-  const elements = await getElements();
+export default function Elements() {
+  const { country, usdToInr } = useContext(StoreContext);
+  const [loader, setLoader] = useState(true);
+  const [elements, setElements] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const elements = await getElements();
+      setElements(elements);
+      setLoader(false);
+    }
+    fetchData();
+  }, []);
+
+  if (loader) {
+    return <Loader />;
+  }
 
   return (
     <main className="mt-16 md:px-28 px-4 space-y-28 min-h-screen">
@@ -29,10 +50,15 @@ export default async function Elements() {
             <ElementCard
               key={index}
               name={element?.name}
-              price={element?.price}
+              price={
+                country === "IN" && usdToInr
+                  ? (element?.price * usdToInr)?.toFixed(2)
+                  : element?.price
+              }
               mainImage={urlForImage(element?.mainImage).url().toString()}
               alt={element?.mainImage?.alt}
               slug={element?.slug}
+              country={country}
             />
           ))}
         </div>

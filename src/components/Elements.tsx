@@ -10,7 +10,7 @@ import {
   orderBy,
   limit,
 } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import ContentLoader from "react-content-loader";
 import type { SanityDocument } from "@sanity/client";
 
@@ -21,6 +21,7 @@ import { getElements } from "../../sanity/lib/utils";
 import { urlForImage } from "../../sanity/lib/image";
 import { useRouter } from "next/navigation";
 import { BsArrowRight } from "react-icons/bs";
+import { StoreContext } from "@/store";
 
 const ELEMENTS = [
   {
@@ -42,7 +43,7 @@ const ELEMENTS = [
 ];
 
 export default function ({ elements = [] }: { elements: SanityDocument[] }) {
-  const [loader, setLoader] = useState(true);
+  const { usdToInr, country } = useContext(StoreContext);
 
   const router = useRouter();
 
@@ -73,10 +74,15 @@ export default function ({ elements = [] }: { elements: SanityDocument[] }) {
                 <ElementCard
                   key={index}
                   name={element?.name}
-                  price={element?.price}
+                  price={
+                    country === "IN"
+                      ? (element?.price * usdToInr)?.toFixed(2)
+                      : element?.price
+                  }
                   mainImage={urlForImage(element?.mainImage).url().toString()}
                   alt={element?.mainImage?.alt}
                   slug={element?.slug}
+                  country={country}
                 />
               ))}
               <BlankCard />

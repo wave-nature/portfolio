@@ -106,4 +106,33 @@ async function saveReview(data: {
   }
 }
 
-export { saveSiteVisitImpression, saveEmail, saveReview };
+// get usd to inr
+async function getUsdToInr() {
+  try {
+    // get response as text
+    const res = await axios.get("/api/usd-inr");
+
+    return res.data?.usdToInr;
+  } catch (error: any) {
+    return 80;
+  }
+}
+
+// get country
+async function getCountry() {
+  const ipAddress = await getClientIpAddress();
+  if (!ipAddress) return console.log("No IP address found");
+
+  const location = await getLocationFromIp(ipAddress);
+  if (!location) return console.log("No location found");
+
+  return location?.country;
+}
+
+export {
+  saveSiteVisitImpression,
+  saveEmail,
+  saveReview,
+  getUsdToInr,
+  getCountry,
+};

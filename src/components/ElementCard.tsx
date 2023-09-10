@@ -1,6 +1,5 @@
 import { LuArrowRight } from "react-icons/lu";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function ({
   name,
@@ -8,12 +7,14 @@ export default function ({
   mainImage,
   alt,
   slug,
+  country,
 }: {
   name: string;
   price: number;
   slug: string;
   mainImage: string;
   alt: string;
+  country?: string;
 }) {
   return (
     <Link href={`/elements/${slug}`}>
@@ -29,7 +30,8 @@ export default function ({
         <div className="flex items-center justify-between mt-3 px-1">
           <h4 className="text-lg font-semibold">{name}</h4>
           <h5 className="text-white font-semibold bg-green-500 py-1 px-2">
-            ${price}
+            {country === "IN" ? "₹" : "$"}
+            {price}
           </h5>
         </div>
       </div>
