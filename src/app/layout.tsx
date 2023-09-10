@@ -1,8 +1,10 @@
-import Header from "@/components/Header";
-import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+
 import Copyright from "@/components/Copyright";
+import Header from "@/components/Header";
+import StoreProvider from "@/store";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,9 +29,11 @@ export default function RootLayout({
         content="/images/preview.png"
       ></meta>
       <body className={`${inter.className} relative`}>
-        <Header />
-        {children}
-        <Copyright />
+        <StoreProvider>
+          <Header />
+          {children}
+          <Copyright />
+        </StoreProvider>
       </body>
     </html>
   );
