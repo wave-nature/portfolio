@@ -122,7 +122,7 @@ export default function ElementDetails({
               {/* <button className="text-semibold text-white bg-green-500 px-3 py-2 rounded-sm hover:bg-green-600 transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
                 Buy ${element?.price}
               </button> */}
-              <InterestedModal />
+              <InterestedModal slug={element?.slug} />
 
               <Link
                 href={element?.previewURL}
@@ -175,7 +175,7 @@ export default function ElementDetails({
             ))}
           </div>
         </div> */}
-        
+
         <div>
           <h2 className="text-xl md:text-2xl font-semibold mb-4">Details</h2>
           <p className="text-slate-600">

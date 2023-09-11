@@ -11,6 +11,7 @@ timestamp
 const elementBySlugFields = `_id,
 name,
 price,
+"slug": slug.current,
 previewURL,
 features[] -> {name, desc},
 techStack[] -> {shortName},

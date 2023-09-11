@@ -19,7 +19,9 @@ const style = {
   p: 4,
 };
 
-export default function InterestedModal() {
+export default function InterestedModal({ slug }: { slug: string }) {
+  console.log(slug);
+
   const [formSubmit, setFormSubmit] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [open, setOpen] = useState(false);
@@ -41,7 +43,7 @@ export default function InterestedModal() {
     e.preventDefault();
     if (!email) return;
     setLoader(true);
-    await saveEmail(email);
+    await saveEmail(`${email} <${slug}>`);
     setFormSubmit(true);
     setLoader(false);
   }
