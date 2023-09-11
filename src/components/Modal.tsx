@@ -6,6 +6,8 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { CircularProgress } from "@mui/material";
 import { saveEmail } from "@/request";
+import { StoreContext } from "@/store";
+import { useContext } from "react";
 
 const style = {
   position: "absolute" as "absolute",
@@ -20,6 +22,8 @@ const style = {
 };
 
 export default function ContactModal() {
+  const { country } = useContext(StoreContext);
+
   const [formSubmit, setFormSubmit] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [open, setOpen] = useState(false);
@@ -52,7 +56,10 @@ export default function ContactModal() {
         onClick={handleOpen}
         className="group flex items-center text-pink-500 md:text-3xl text-xl cursor-pointer font-bold border-2 border-pink-500 max-w-max px-6 py-4"
       >
-        <p>We start from ₹1500/hr, let's connect</p>
+        <p>
+          We start from&nbsp;
+          {country === "IN" ? `₹1500` : `$20`}/hr, let's connect
+        </p>
         <span className="ml-4 group-hover:translate-x-4 transition duration-300 mt-1">
           <BsArrowRight />
         </span>
