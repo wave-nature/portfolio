@@ -17,15 +17,25 @@ import { StoreContext } from "@/store";
 import Loader from "@/components/Loader";
 
 export default function Elements() {
-  const { country, usdToInr } = useContext(StoreContext);
+  const { country, usdToInr, setCountry, setUsdToInr } =
+    useContext(StoreContext);
   const [loader, setLoader] = useState(true);
   const [elements, setElements] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const elements = await getElements();
-      setElements(elements);
-      setLoader(false);
+      try {
+        const elements = await getElements();
+        setElements(elements);
+        const usdToInr = await getUsdToInr();
+        const country = await getCountry();
+        setUsdToInr(usdToInr);
+        setCountry(country);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoader(false);
+      }
     }
     fetchData();
   }, []);

@@ -10,7 +10,7 @@ import {
   orderBy,
   limit,
 } from "firebase/firestore";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import ContentLoader from "react-content-loader";
 import type { SanityDocument } from "@sanity/client";
 
@@ -22,6 +22,7 @@ import { urlForImage } from "../../sanity/lib/image";
 import { useRouter } from "next/navigation";
 import { BsArrowRight } from "react-icons/bs";
 import { StoreContext } from "@/store";
+import { getCountry, getUsdToInr } from "@/request";
 
 const ELEMENTS = [
   {
@@ -43,7 +44,26 @@ const ELEMENTS = [
 ];
 
 export default function ({ elements = [] }: { elements: SanityDocument[] }) {
-  const { usdToInr, country } = useContext(StoreContext);
+  const [loader, setLoader] = useState(true);
+  const { usdToInr, country, setUsdToInr, setCountry } =
+    useContext(StoreContext);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const usdToInr = await getUsdToInr();
+        const country = await getCountry();
+        setUsdToInr(usdToInr);
+        setCountry(country);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoader(false);
+      }
+    }
+
+    fetchData();
+  }, []);
 
   const router = useRouter();
 
@@ -64,29 +84,38 @@ export default function ({ elements = [] }: { elements: SanityDocument[] }) {
         </div>
 
         {/* Elements */}
-        <div>
-          <div className="w-full overflow-x-scroll">
-            <div
-              className={`flex gap-8 p-2`}
-              style={{ width: elements?.length * 30 + "rem" }}
-            >
-              {elements?.map((element: any, index: number) => (
-                <ElementCard
-                  key={index}
-                  name={element?.name}
-                  price={
-                    country === "IN"
-                      ? (element?.price * usdToInr)?.toFixed(2)
-                      : element?.price
-                  }
-                  mainImage={urlForImage(element?.mainImage).url().toString()}
-                  alt={element?.mainImage?.alt}
-                  slug={element?.slug}
-                  country={country}
-                />
-              ))}
-              <BlankCard />
-              {/* {ELEMENTS.map((el, i) => (
+        {loader ? (
+          <div className="flex gap-3">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <ContentLoader key={i}>
+                <rect x="0" y="0" rx="5" ry="5" width="100%" height="100%" />
+              </ContentLoader>
+            ))}
+          </div>
+        ) : (
+          <div>
+            <div className="w-full overflow-x-scroll">
+              <div
+                className={`flex gap-8 p-2`}
+                style={{ width: elements?.length * 30 + "rem" }}
+              >
+                {elements?.map((element: any, index: number) => (
+                  <ElementCard
+                    key={index}
+                    name={element?.name}
+                    price={
+                      country === "IN"
+                        ? (element?.price * usdToInr)?.toFixed(2)
+                        : element?.price
+                    }
+                    mainImage={urlForImage(element?.mainImage).url().toString()}
+                    alt={element?.mainImage?.alt}
+                    slug={element?.slug}
+                    country={country}
+                  />
+                ))}
+                <BlankCard />
+                {/* {ELEMENTS.map((el, i) => (
               <div key={i} className="space-y-4 border p-2 overflow-hidden">
                 <Link href={el.link} target="_blank">
                   <img
@@ -109,16 +138,17 @@ export default function ({ elements = [] }: { elements: SanityDocument[] }) {
                 </div>
               </div>
             ))} */}
+              </div>
             </div>
-          </div>
 
-          <button
-            className="border-2 group border-slate-600 hover:border-dashed w-48 md:w-60 py-3 md:py-4 mt-12 text-md md:text-xl"
-            onClick={() => router.push("/elements")}
-          >
-            <span>View all elements</span>
-          </button>
-        </div>
+            <button
+              className="border-2 group border-slate-600 hover:border-dashed w-48 md:w-60 py-3 md:py-4 mt-12 text-md md:text-xl"
+              onClick={() => router.push("/elements")}
+            >
+              <span>View all elements</span>
+            </button>
+          </div>
+        )}
       </section>
     </Inview>
   );
