@@ -20,7 +20,7 @@ export default function () {
         </div>
 
         {/* links and icons */}
-        <section className="space-y-16 mx-auto md:mx-0">
+        {/* <section className="space-y-16 mx-auto md:mx-0">
           <nav>
             <ul className="flex md:flex-row flex-col gap-16 ">
               <li>
@@ -91,7 +91,7 @@ export default function () {
               <span className="text-lg">vivek30bhadouria@gmail.com</span>
             </Link>
           </div>
-        </section>
+        </section> */}
       </footer>
     </Inview>
   );

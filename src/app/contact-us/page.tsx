@@ -4,21 +4,21 @@ function ContactUs() {
       <h1 className="text-xl font-bold">Contact Us</h1>
       <p>
         If you have any questions, concerns, or need to request a refund, please
-        contact us at{" "}
-        <a href="mailto:gigplaced@gmail.com">gigplaced@gmail.com</a> or reach
-        out to us at the address below:
+        contact me at{" "}
+        <a href="mailto:vivek30bhadouria@gmail.com">gigplaced@gmail.com</a> or
+        reach out to us at the address below:
       </p>
 
       <p className="py-2">
-        GigPlaced,
+        Vivek S. Bhadouria,
         <br />
-        5th Street,
+        Bhind Road,
         <br />
-        Near Collectorate Road,
+        Near Gole Ka Mandir Road,
         <br />
-        Satna, Madhya Pradesh, India - 485001
+        Gwalior, Madhya Pradesh, India - 474005
       </p>
-      <p>Thank you for choosing GigPlaced for your project needs.</p>
+      <p>Thank you for choosing me for your project needs.</p>
     </main>
   );
 }
