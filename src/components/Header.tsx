@@ -25,21 +25,22 @@ export default function () {
           </Link>
         ) : (
           <Link href="/" className="text-xl md:text-2xl font-bold">
-            <Image
+            {/* <Image
               src="/images/logo.svg"
               alt="GigPlaced"
               width={180}
               height={40}
-            />
+            /> */}
+            <span className="border-b-4 border-green-500">Vivek</span>
           </Link>
         )}
 
         {pathname === "/" ? (
           <nav className="md:block hidden">
             <ul className="flex gap-16">
-              <li>
+              {/* <li>
                 <Link href="#elements">Elements</Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="#services">Services</Link>
               </li>
@@ -47,7 +48,7 @@ export default function () {
                 <Link href="#work">Work</Link>
               </li>
               <li>
-                <Link href="#about">About Us</Link>
+                <Link href="#about">About Me</Link>
               </li>
               <li>
                 <Link href="#footer">Connect</Link>

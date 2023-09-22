@@ -9,7 +9,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GigPlaced",
+  title: "Vivek S. Bhadouria",
   description:
     "Discover top-notch freelancing services at gigplaced.tech. Our talented pool of professionals offers a wide range of expertise, from web and app development to data science and video editing. Partner with us to find skilled freelancers for your projects and unlock the true potential of your ideas.",
   keywords:

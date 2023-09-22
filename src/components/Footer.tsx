@@ -48,7 +48,7 @@ export default function () {
           <div className="flex md:flex-row flex-col items-center justify-between gap-4">
             <div className="flex gap-8 items-center">
               <Link
-                href="https://www.linkedin.com/in/gigplaced/"
+                href="https://www.linkedin.com/in/vivek-singh-bhadouria-427649200/"
                 target="blank"
                 rel="noopener noreferrer"
               >
@@ -56,7 +56,7 @@ export default function () {
               </Link>
 
               <Link
-                href="https://www.fiverr.com/gigplaced"
+                href="https://www.fiverr.com/vivek_bhadouria?public_mode=true"
                 target="blank"
                 rel="noopener noreferrer"
               >
@@ -68,7 +68,7 @@ export default function () {
                 />
               </Link>
               <Link
-                href="https://www.upwork.com/freelancers/~01501d8f8903eb5af2"
+                href="https://www.upwork.com/freelancers/~01b7ba221d134ec5c4?viewMode=1"
                 target="blank"
                 rel="noopener noreferrer"
               >
@@ -79,28 +79,16 @@ export default function () {
                   width={30}
                 />
               </Link>
-              <Link
-                href="https://www.freelancer.com/u/gigplaced"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/images/freelancer.svg"
-                  alt="freelancer icon"
-                  height={30}
-                  width={30}
-                />
-              </Link>
             </div>
 
             <Link
-              href="mailto:gigplaced@gmail.com"
+              href="mailto:vivek30bhadouria@gmail.com"
               target="blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-pink-500"
             >
               <BsEnvelope className="w-6 h-6" />
-              <span className="text-lg">gigplaced@gmail.com</span>
+              <span className="text-lg">vivek30bhadouria@gmail.com</span>
             </Link>
           </div>
         </section>

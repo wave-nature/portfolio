@@ -13,17 +13,17 @@ export default function () {
         {/* Header */}
         <div className="space-y-4">
           <h5 className="uppercase font-bold text-pink-500 md:text-xl text-lg">
-            About Us
+            About Me
           </h5>
           <h2 className="font-semibold md:text-5xl sm:text-4xl text-3xl md:w-2/3">
-            We have a vision to transform the way of development.
+            I believe in a vision to transform the way of development.
           </h2>
         </div>
 
         {/* our team */}
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-16">
+        <div className="grid grid-cols-1 gap-16">
           {/* vaibhav */}
-          <div className="flex flex-col items-center gap-4 p-4">
+          {/* <div className="flex flex-col items-center gap-4 p-4">
             <Image
               src="/images/vaibhav.jpg"
               alt="vaibhav"
@@ -112,7 +112,7 @@ export default function () {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* vivek */}
           <div className="flex flex-col items-center gap-4 p-4">
             <Image

@@ -45,7 +45,7 @@ const MobileNav = () => {
               open ? "block" : "hidden"
             } flex-col gap-2 p-2 rounded-lg bg-white shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden`}
           >
-            <Option setOpen={setOpen} text="Elements" href="#elements" />
+            {/* <Option setOpen={setOpen} text="Elements" href="#elements" /> */}
             <Option setOpen={setOpen} text="Services" href="#services" />
             <Option setOpen={setOpen} text="Work" href="#work" />
             <Option setOpen={setOpen} text="About us" href="#about" />

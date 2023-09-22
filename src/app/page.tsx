@@ -9,17 +9,17 @@ import Work from "@/components/Work";
 import { getElements } from "../../sanity/lib/utils";
 
 export default async function Home() {
-  const elements = await getElements();
+  // const elements = await getElements();
 
   return (
-    <main className="mt-16 md:px-28 px-4 space-y-28">
-      <Alert />
+    <main className="mt-24 md:px-28 px-4 space-y-28">
+      {/* <Alert /> */}
       <Hero />
       <Services />
-      <Elements elements={elements} />
+      {/* <Elements elements={elements} /> */}
       <Work />
       <AboutUs />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Footer />
     </main>
   );

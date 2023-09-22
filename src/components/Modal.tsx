@@ -65,8 +65,8 @@ export default function ContactModal() {
         </span>
       </button>
       <p className="md:text-lg text-sm mt-8 text-slate-500 font-bold">
-        We believe in a 'pay us only when you are satisfied with our work'
-        policy, which we fully understand and endorse ✌
+        I believe in pay me only when you are satisfied with my work's policy,
+        which I fully understand and endorse ✌
       </p>
       <Modal
         open={open}
@@ -80,7 +80,7 @@ export default function ContactModal() {
               className="md:text-xl text-lg text-green-500 font-semibold"
               htmlFor="name"
             >
-              Thanks, we are on the way to work with you! Let's build something.
+              Thanks, I am on the way to work with you! Let's build something.
             </label>
           ) : (
             <form onSubmit={contactHandler} className="flex flex-col gap-4">
@@ -88,7 +88,7 @@ export default function ContactModal() {
                 className="md:text-2xl text-lg text-pink-500 font-semibold"
                 htmlFor="name"
               >
-                We are just this step away from you!
+                I am just this step away from you!
               </label>
               <input
                 className="outline-slate-700 border-slate-700 border-2 px-4 py-2 text-lg font-semibold"
