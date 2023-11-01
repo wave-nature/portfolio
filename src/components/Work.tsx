@@ -28,6 +28,24 @@ export default function () {
               title="Book Table"
               description="Table booking website application for restaurant and hotels. Functionalities like availaibilty and scheduling slot for booking."
             />
+            <Project
+              link="https://vivek-admin-dashboard.vercel.app/"
+              imgSrc="/images/admin.png"
+              title="Admin Dashboard"
+              description="Admin dashboard for content management system. Functionalities like add, delete, update and view content."
+            />
+            <Project
+              link="https://quizzie-pro-vivek.vercel.app/"
+              imgSrc="/images/quizzie.png"
+              title="Quiz App"
+              description="Quiz application with functionalities like timer, score, leaderboard and more."
+            />
+            <Project
+              link="https://whatsapp-vivek.vercel.app/"
+              imgSrc="/images/wa.png"
+              title="WhatsApp Clone"
+              description="WhatsApp clone with functionalities like chat, group chat, profile, status and more."
+            />
             {/* <Project
               link="#"
               imgSrc="/images/1.webp"
