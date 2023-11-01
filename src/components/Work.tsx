@@ -34,6 +34,17 @@ export default function () {
               title="Admin Dashboard"
               description="Admin dashboard for content management system. Functionalities like add, delete, update and view content."
             />
+
+            {/* <Project
+              link="#"
+              imgSrc="/images/1.webp"
+              title="Uploading Soon"
+              description="This is a dummy description for the project."
+            /> */}
+          </div>
+
+          {/* row 2 */}
+          <div className="space-y-12 mt-16">
             <Project
               link="https://quizzie-pro-vivek.vercel.app/"
               imgSrc="/images/quizzie.png"
@@ -46,30 +57,7 @@ export default function () {
               title="WhatsApp Clone"
               description="WhatsApp clone with functionalities like chat, group chat, profile, status and more."
             />
-            {/* <Project
-              link="#"
-              imgSrc="/images/1.webp"
-              title="Uploading Soon"
-              description="This is a dummy description for the project."
-            /> */}
           </div>
-
-          {/* row 2 */}
-          {/* <div className="space-y-12 mt-16">
-            <Project
-              link="#"
-              imgSrc="/images/2.webp"
-              title="Uploading Soon"
-              description="This is a dummy description for the project."
-            />
-
-            <Project
-              link="#"
-              imgSrc="/images/3.webp"
-              title="Uploading Soon"
-              description="This is a dummy description for the project."
-            />
-          </div> */}
         </div>
       </section>
     </Inview>
